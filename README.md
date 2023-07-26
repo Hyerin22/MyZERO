@@ -1,3 +1,7 @@
+## MyZERO
+#GNEC Hackathon project by Tehi and Rina
+
+
 # React + Express No-Fluff Boilerplate
 
 A boilerplate project for anyone interested in making a project that uses React and Express.
