@@ -8,6 +8,7 @@ import Profile from "../components/Profile";
 // images
 import ratingSecond from "../img/rating-second.png";
 import vancouver from "../img/vancouver-symbol.jpeg";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <RatingProfile ratingImage={ratingSecond} />
       <Profile symbol={vancouver} />
       <Nav />
+      <Footer />
     </div>
   );
 }
