@@ -1,6 +1,6 @@
 @import "../variables/Variables.scss";
 
-.cont {
+.rating-cont {
   width: 117px;
   height: 117px;
   border-radius: 50%;
@@ -17,7 +17,7 @@
     border-radius: 25px;
     box-shadow: 2px 2px 25px 0px rgba(0, 0, 0, 0.15);
     color: $black;
-    font-size: 14px;
+    font-size: 13px;
     height: 50px;
     width: 310px;
     position: absolute;
