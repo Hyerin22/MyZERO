@@ -12,6 +12,8 @@ export default function Button(props) {
     color = "#1d1d1d",
     padding = "0",
     margin = "0",
+    radius,
+    font = "D-DIN, sans-serif",
   } = props;
   return (
     <div className="button-cont">
@@ -22,9 +24,11 @@ export default function Button(props) {
           padding: padding,
           margin: margin,
           fontSize: size,
+          fontFamily: font,
           border: border,
           background: bgColor,
           color: color,
+          borderRadius: radius,
         }}
       >
         {title}
