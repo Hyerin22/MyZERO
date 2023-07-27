@@ -1,0 +1,27 @@
+@import "../variables/Variables.scss";
+
+ul {
+  list-style-type: none;
+  // text-align: right;
+
+  .nav-item {
+    a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 25px;
+      padding: 0 30px;
+      margin: 0;
+
+      &.active {
+        background-color: $mainColor;
+        width: 223px;
+        height: 50px;
+        border-radius: 23px 0px 35px 25px;
+        color: $white;
+        display: flex;
+        // justify-content: flex-end;
+        align-items: center;
+      }
+    }
+  }
+}

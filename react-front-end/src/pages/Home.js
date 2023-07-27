@@ -1,6 +1,7 @@
 import React from "react";
 
 // components
+import Nav from "../components/Nav";
 import RatingProfile from "../components/RatingProfile";
 import Profile from "../components/Profile";
 
@@ -13,6 +14,7 @@ export default function Home() {
     <div>
       <RatingProfile ratingImage={ratingSecond} />
       <Profile symbol={vancouver} />
+      <Nav />
     </div>
   );
 }
