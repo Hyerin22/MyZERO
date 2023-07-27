@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 100px;
+  margin: 70px 35px 25px 0;
 
   span {
     background: $white;
@@ -22,8 +22,8 @@
     width: 310px;
     position: absolute;
     text-align: center;
-    top: -70px;
-    left: 85px;
+    top: -60px;
+    left: 100px;
     display: none;
     padding: 13px 25px;
     font-family: $mainFont;

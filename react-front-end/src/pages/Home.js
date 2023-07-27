@@ -1,4 +1,6 @@
 import React from "react";
+// styles
+import "../styles/Home.scss";
 
 // components
 import Nav from "../components/Nav";
@@ -12,11 +14,20 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div>
-      <RatingProfile ratingImage={ratingSecond} />
-      <Profile symbol={vancouver} />
-      <Nav />
-      <Footer />
+    <div className="container">
+      <div className="sidebar">
+        <div className="sidebar-top">
+          <RatingProfile ratingImage={ratingSecond} />
+          <Profile symbol={vancouver} />
+        </div>
+        <div className="nav">
+          <Nav />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
+      </div>
+      <div className="main"></div>
     </div>
   );
 }
