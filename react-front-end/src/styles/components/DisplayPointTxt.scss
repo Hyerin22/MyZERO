@@ -1,0 +1,11 @@
+@import "../variables/Variables.scss";
+
+.point-container {
+  display: flex;
+  align-items: baseline;
+  p {
+    margin: 0;
+    color: $black;
+    font-family: $mainFont;
+  }
+}
