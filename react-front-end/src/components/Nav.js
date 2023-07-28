@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/components/Nav.scss";
-
 import { NavLink } from "react-router-dom";
+
+import "../styles/components/Nav.scss";
 
 export default function Nav() {
   return (
@@ -11,7 +11,7 @@ export default function Nav() {
           <NavLink to="/">Home</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/How">How to collect?</NavLink>
+          <NavLink to="/HowTo">How to collect?</NavLink>
         </li>
         <li className="nav-item">
           <NavLink to="/Store">Store</NavLink>
