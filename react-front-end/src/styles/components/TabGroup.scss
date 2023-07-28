@@ -1,0 +1,26 @@
+@import "../variables/Variables.scss";
+
+.tab-container {
+  // display: flex;
+  // justify-content: flex-end;
+  position: absolute;
+  right: 45px;
+  top: -45px;
+
+  .tab {
+    display: inline-block;
+    padding: 14px 30px;
+    text-align: center;
+    text-decoration: none;
+    color: $black;
+    background-color: $white;
+    box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 18px 18px 0px 0px;
+    border: none;
+
+    &.active {
+      background-color: $mainColor;
+      color: $white;
+    }
+  }
+}

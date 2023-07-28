@@ -1,4 +1,5 @@
 import React from "react";
+
 // styles
 import "../styles/Home.scss";
 
@@ -6,15 +7,30 @@ import "../styles/Home.scss";
 import Nav from "../components/Nav";
 import RatingProfile from "../components/RatingProfile";
 import Profile from "../components/Profile";
+import Footer from "../components/Footer";
+import Button from "../components/Button";
+import DisplayPointTxt from "../components/DisplayPointTxt";
+import TabGroup from "../components/TabGroup";
+
+// pages
+import HomeMyZERO from "./HomeMyZERO";
 
 // images
 import ratingSecond from "../img/rating-second.png";
 import vancouver from "../img/vancouver-symbol.jpeg";
-import Footer from "../components/Footer";
 
 export default function Home() {
+  // for the tab menu
+  const tabTypes = ["MyZERO", "Community", "Setting"];
+
+  const tabPages = {
+    MyZERO: HomeMyZERO,
+    Community: null,
+    Setting: null,
+  };
+
   return (
-    <div className="container">
+    <div className="home-container">
       <div className="sidebar">
         <div className="sidebar-top">
           <RatingProfile ratingImage={ratingSecond} />
@@ -27,7 +43,24 @@ export default function Home() {
           <Footer />
         </div>
       </div>
-      <div className="main"></div>
+      <div className="home-main">
+        <div className="home-top">
+          <DisplayPointTxt
+            size="26px"
+            point="1,403"
+            color="#1d828e"
+            pointSize="76px"
+            pointMargin="0px 7px"
+          />
+        </div>
+        <div className="home-content">
+          <div className="tabs-container">
+            <div className="content-box">
+              <TabGroup types={tabTypes} tabPages={tabPages} marginL="10px" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

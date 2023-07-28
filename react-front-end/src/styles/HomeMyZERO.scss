@@ -1,0 +1,34 @@
+@import "../styles/variables/Variables.scss";
+
+.myZero-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+
+  .myZero-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .myZero-mid {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+
+    .heading {
+      font-size: 32px;
+    }
+
+    .graph-cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 850px;
+      height: 315px;
+      background-color: $secondBgColor;
+    }
+  }
+}
