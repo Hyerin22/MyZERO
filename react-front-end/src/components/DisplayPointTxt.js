@@ -9,10 +9,17 @@ export default function DisplayPointTxt(props) {
     size,
     pointSize,
     pointMargin,
+    alignItems = "baseline",
   } = props;
   return (
-    <div className="point-container">
+    <div
+      style={{
+        alignItems: alignItems,
+      }}
+      className="point-container"
+    >
       <p
+        className="firstText"
         style={{
           fontSize: size,
         }}
