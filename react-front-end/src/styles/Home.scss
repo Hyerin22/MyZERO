@@ -1,6 +1,6 @@
 @import "../styles/variables/Variables.scss";
 
-.container {
+.home-container {
   display: flex;
   height: 100vh;
 
@@ -15,8 +15,7 @@
     .sidebar-top {
       flex: 1;
     }
-    .nav,
-    .main {
+    .nav {
       flex: 1.5;
     }
 
@@ -26,9 +25,46 @@
       align-items: flex-end;
     }
   }
-
-  .main {
+  .home-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 4;
+    padding: 0 100px;
+
+    .home-top {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .home-content {
+      display: flex;
+      justify-content: center;
+
+      .content-box {
+        position: relative;
+        z-index: 1;
+        width: 1059px;
+        padding: 65px 70px;
+        height: 720px;
+        box-sizing: border-box;
+        background-color: $white;
+        border-radius: 45px;
+        box-shadow: 2px 2px 25px 0px rgba(0, 0, 0, 0.15);
+      }
+
+      .tabs-container {
+        // display: flex;
+        // justify-content: flex-end;
+        // margin: 0 50px 0 0;
+        // position: absolute;
+        // right: 45px;
+        // top: -45px;
+        margin-top: 60px;
+      }
+    }
   }
 }
 
