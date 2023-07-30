@@ -32,8 +32,7 @@ export default function TabGroup({ types, tabPages, size = "16px", marginL }) {
           </button>
         ))}
       </div>
-      {/* <p /> */}
-      {renderTabContent()}
+      <div className="content-box">{renderTabContent()}</div>
     </>
   );
 }
