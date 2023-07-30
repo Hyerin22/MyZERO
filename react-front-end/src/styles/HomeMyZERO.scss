@@ -27,8 +27,47 @@
       align-items: center;
       margin: 0 auto;
       width: 850px;
-      height: 315px;
+      height: 315px; // should be changed to auto after getting data
       background-color: $secondBgColor;
+      border-radius: 20px;
+    }
+    .graph-cont2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 850px;
+      height: 115px; // should be changed to auto after getting data
+      background-color: $secondBgColor;
+      border-radius: 20px;
+      position: relative;
+
+      span {
+        background: $white;
+        border-radius: 25px;
+        box-shadow: 2px 2px 25px 0px rgba(0, 0, 0, 0.15);
+        color: $black;
+        font-size: 13px;
+        width: 100px;
+        position: absolute;
+        text-align: center;
+        top: 10px;
+        right: 10px;
+        display: none;
+        padding: 10px 20px;
+        font-family: $mainFont;
+      }
+
+      svg {
+        position: absolute;
+        top: -5px;
+        right: 0px;
+
+        &:hover + span {
+          display: block;
+          z-index: 10;
+        }
+      }
     }
   }
 }
