@@ -55,9 +55,7 @@ export default function Home() {
         </div>
         <div className="home-content">
           <div className="tabs-container">
-            <div className="content-box">
-              <TabGroup types={tabTypes} tabPages={tabPages} marginL="10px" />
-            </div>
+            <TabGroup types={tabTypes} tabPages={tabPages} marginL="10px" />
           </div>
         </div>
       </div>
