@@ -14,10 +14,11 @@ import TabGroup from "../components/TabGroup";
 
 // pages
 import HomeMyZERO from "./HomeMyZERO";
+import Community from "./Community";
 
 // images
 import ratingSecond from "../img/rating-second.png";
-import vancouver from "../img/vancouver-symbol.jpeg";
+import vancSymbol from "../img/vancouver-symbol.jpeg";
 
 export default function Home() {
   // for the tab menu
@@ -25,7 +26,7 @@ export default function Home() {
 
   const tabPages = {
     MyZERO: HomeMyZERO,
-    Community: null,
+    Community: Community,
     Setting: null,
   };
 
@@ -34,7 +35,7 @@ export default function Home() {
       <div className="sidebar">
         <div className="sidebar-top">
           <RatingProfile ratingImage={ratingSecond} />
-          <Profile symbol={vancouver} />
+          <Profile symbol={vancSymbol} />
         </div>
         <div className="nav">
           <Nav />
