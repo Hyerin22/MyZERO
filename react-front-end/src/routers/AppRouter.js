@@ -8,7 +8,7 @@ export default function AppRouter() {
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="city/:cityName" element={<CityDetail />}></Route>
+        <Route path="city/:id" element={<CityDetail />}></Route>
       </Routes>
     </Router>
   );

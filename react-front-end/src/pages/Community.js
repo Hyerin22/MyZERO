@@ -29,6 +29,7 @@ export default function Community() {
         data.map((city) => (
           <City
             key={city.id}
+            id={city.id}
             cityName={city.address.city}
             cityImg={vancouver}
             joinedPeople="00"

@@ -10,7 +10,7 @@ export default function City({
   id,
 }) {
   return (
-    <Link to={`/city/${cityName}`}>
+    <Link to={`/city/${id}`}>
       <div className="city-container">
         <p className="city">{cityName}</p>
         <p className="people-num">{joinedPeople} number</p>
