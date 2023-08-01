@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // styles
 import "../styles/Home.scss";
@@ -23,6 +23,7 @@ import vancSymbol from "../img/vancouver-symbol.jpeg";
 export default function Home() {
   // for the tab menu
   const tabTypes = ["MyZERO", "Community", "Setting"];
+  const [activeTab, setActiveTab] = useState(tabTypes[0]);
 
   const tabPages = {
     MyZERO: HomeMyZERO,
@@ -32,6 +33,7 @@ export default function Home() {
 
   return (
     <div className="home-container">
+      {/* Sidebar */}
       <div className="sidebar">
         <div className="sidebar-top">
           <RatingProfile ratingImage={ratingSecond} />
@@ -44,6 +46,7 @@ export default function Home() {
           <Footer />
         </div>
       </div>
+      {/* Right side main content */}
       <div className="home-main">
         <div className="home-top">
           <DisplayPointTxt
@@ -56,7 +59,13 @@ export default function Home() {
         </div>
         <div className="home-content">
           <div className="tabs-container">
-            <TabGroup types={tabTypes} tabPages={tabPages} marginL="10px" />
+            <TabGroup
+              types={tabTypes}
+              tabPages={tabPages}
+              marginL="10px"
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
           </div>
         </div>
       </div>

@@ -3,12 +3,19 @@ import React, { useState } from "react";
 // styles
 import "../styles/components/TabGroup.scss";
 
-export default function TabGroup({ types, tabPages, size = "16px", marginL }) {
-  const [active, setActive] = useState(types[0]);
+export default function TabGroup({
+  types,
+  tabPages,
+  size = "16px",
+  marginL,
+  activeTab,
+  setActiveTab,
+}) {
+  // const [active, setActive] = useState(types[0]);
 
   const renderTabContent = () => {
     // current active tab
-    const ReturnPage = tabPages[active];
+    const ReturnPage = tabPages[activeTab];
     if (ReturnPage) {
       return <ReturnPage />;
     }
@@ -25,8 +32,8 @@ export default function TabGroup({ types, tabPages, size = "16px", marginL }) {
               fontSize: size,
               marginLeft: marginL,
             }}
-            className={`tab ${active === type ? "active" : ""}`}
-            onClick={() => setActive(type)}
+            className={`tab ${activeTab === type ? "active" : ""}`}
+            onClick={() => setActiveTab(type)}
           >
             {type}
           </button>
