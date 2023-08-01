@@ -8,6 +8,8 @@ import "../styles/CityInfo.scss";
 import DisplayPointTxt from "../components/DisplayPointTxt";
 
 export default function CityInfo() {
+  // for data
+  // const [data, setData] = useState([]);
   const [city, setCity] = useState(null);
 
   const { id } = useParams();
@@ -22,8 +24,37 @@ export default function CityInfo() {
     }
   };
 
+  // for D-day
+  const [countdown, setCountdown] = useState(0);
+
+  const calculateCountdown = () => {
+    const currentDate = new Date();
+    const lastDayOfMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth() + 1, // January is 0
+      0
+    );
+
+    // Calculate the difference in milliseconds
+    const timeDiff = lastDayOfMonth.getTime() - currentDate.getTime();
+
+    // Convert milliseconds to days
+    const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)) + 1;
+
+    setCountdown(daysRemaining);
+  };
+
   useEffect(() => {
     getData();
+    calculateCountdown();
+
+    // Update the countdown every second
+    const interval = setInterval(() => {
+      calculateCountdown();
+    }, 1000);
+
+    // Clean up the interval on unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -40,6 +71,10 @@ export default function CityInfo() {
               pointSize="76px"
               pointMargin="0px 7px"
             />
+            <div className="dday">
+              <p>D-{countdown}</p>
+              <span>will reset on every month</span>
+            </div>
           </div>
         </div>
       )}

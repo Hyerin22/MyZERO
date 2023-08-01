@@ -2,8 +2,14 @@
 
 .cityinfo-cont {
   .city-top {
+    p {
+      font-family: $pointFont;
+      font-size: 28px;
+      margin: 0;
+    }
     .city-info {
       display: flex;
+      margin-top: 50px;
 
       .dday {
         display: flex;
