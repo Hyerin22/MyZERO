@@ -10,6 +10,12 @@ export default function TabGroup({
   marginL,
   activeTab,
   setActiveTab,
+  padding = "14px 30px",
+  boxPadding = "65px 70px",
+  boxWidth = "1059px",
+  boxHeight = "720px",
+  boxBgColor = "white",
+  tabMarginR = "40px",
 }) {
   // const [active, setActive] = useState(types[0]);
 
@@ -24,13 +30,19 @@ export default function TabGroup({
 
   return (
     <>
-      <div className="tab-container">
+      <div
+        className="tab-container"
+        style={{
+          marginRight: tabMarginR,
+        }}
+      >
         {types.map((type) => (
           <button
             key={type}
             style={{
               fontSize: size,
               marginLeft: marginL,
+              padding: padding,
             }}
             className={`tab ${activeTab === type ? "active" : ""}`}
             onClick={() => setActiveTab(type)}
@@ -39,7 +51,17 @@ export default function TabGroup({
           </button>
         ))}
       </div>
-      <div className="content-box">{renderTabContent()}</div>
+      <div
+        style={{
+          width: boxWidth,
+          padding: boxPadding,
+          height: boxHeight,
+          backgroundColor: boxBgColor,
+        }}
+        className="content-box"
+      >
+        {renderTabContent()}
+      </div>
     </>
   );
 }

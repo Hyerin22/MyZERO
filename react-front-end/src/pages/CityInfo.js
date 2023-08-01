@@ -6,6 +6,7 @@ import "../styles/CityInfo.scss";
 
 // components
 import DisplayPointTxt from "../components/DisplayPointTxt";
+import TabGroup from "../components/TabGroup";
 
 export default function CityInfo() {
   // for data
@@ -57,24 +58,48 @@ export default function CityInfo() {
     return () => clearInterval(interval);
   }, []);
 
+  // for the tab menu
+  const tabTypes = ["Top10", "Prev"];
+  const [activeTab, setActiveTab] = useState(tabTypes[0]);
+
+  const tabPages = {
+    Top10: null,
+    Prev: null,
+  };
+
   return (
     <div className="cityinfo-cont">
       {city && (
-        <div className="city-top" key={city.id}>
-          <p>{city.address.city}</p>
-          <div className="city-info">
-            <DisplayPointTxt
-              text=""
-              size="26px"
-              point="453"
-              color="#1d828e"
-              pointSize="76px"
-              pointMargin="0px 7px"
-            />
-            <div className="dday">
-              <p>D-{countdown}</p>
-              <span>will reset on every month</span>
+        <div>
+          <div className="city-top" key={city.id}>
+            <p>{city.address.city}</p>
+            <div className="city-info">
+              <DisplayPointTxt
+                text=""
+                size="26px"
+                point="453"
+                color="#1d828e"
+                pointSize="76px"
+                pointMargin="0px 7px"
+              />
+              <div className="dday">
+                <p>D-{countdown}</p>
+                <span>will reset on every month</span>
+              </div>
             </div>
+          </div>
+          <div className="cityInfo-tab-cont">
+            <TabGroup
+              types={tabTypes}
+              tabPages={tabPages}
+              marginL="10px"
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+              boxBgColor="#F8F8F8"
+              boxWidth="850px"
+              boxHeight="300px"
+              tabMarginR="100px"
+            />
           </div>
         </div>
       )}
