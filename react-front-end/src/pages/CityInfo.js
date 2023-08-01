@@ -8,6 +8,7 @@ import "../styles/CityInfo.scss";
 import DisplayPointTxt from "../components/DisplayPointTxt";
 import TabGroup from "../components/TabGroup";
 import CommTop10 from "../components/CommTop10";
+import CommPrev from "../components/CommPrev";
 
 export default function CityInfo() {
   // for data
@@ -65,7 +66,7 @@ export default function CityInfo() {
 
   const tabPages = {
     Top10: CommTop10,
-    Prev: null,
+    Prev: CommPrev,
   };
 
   return (
