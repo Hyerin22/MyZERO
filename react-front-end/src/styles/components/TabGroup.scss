@@ -3,11 +3,9 @@
 .tab-container {
   display: flex;
   justify-content: flex-end;
-  margin-right: 40px;
 
   .tab {
     display: inline-block;
-    padding: 14px 30px;
     text-align: center;
     text-decoration: none;
     color: $black;
@@ -26,12 +24,9 @@
 .content-box {
   position: relative;
   z-index: 1;
-  width: 1059px;
-  padding: 65px 70px;
-  height: 720px;
   box-sizing: border-box;
-  background-color: $white;
   border-radius: 45px;
   box-shadow: 2px 2px 25px 0px rgba(0, 0, 0, 0.15);
   overflow: auto;
+  margin: 0 auto;
 }

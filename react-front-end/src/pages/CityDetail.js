@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // styles
-import "../styles/Home.scss";
+import "../styles/CityDetail.scss";
 
 // components
 import Nav from "../components/Nav";
@@ -15,19 +15,20 @@ import TabGroup from "../components/TabGroup";
 // pages
 import HomeMyZERO from "./HomeMyZERO";
 import Community from "./Community";
+import CityInfo from "./CityInfo";
 
 // images
 import ratingSecond from "../img/rating-second.png";
 import vancSymbol from "../img/vancouver-symbol.jpeg";
 
-export default function Home() {
+export default function CityDetail() {
   // for the tab menu
   const tabTypes = ["MyZERO", "Community", "Setting"];
-  const [activeTab, setActiveTab] = useState(tabTypes[0]);
+  const [activeTab, setActiveTab] = useState(tabTypes[1]);
 
   const tabPages = {
     MyZERO: HomeMyZERO,
-    Community: Community,
+    Community: CityInfo,
     Setting: null,
   };
 
@@ -57,8 +58,8 @@ export default function Home() {
             pointMargin="0px 7px"
           />
         </div>
-        <div className="home-content">
-          <div className="tabs-container">
+        <div className="city-content">
+          <div className="city-tabs-container">
             <TabGroup
               types={tabTypes}
               tabPages={tabPages}
