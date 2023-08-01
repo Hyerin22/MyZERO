@@ -7,6 +7,7 @@ import "../styles/CityInfo.scss";
 // components
 import DisplayPointTxt from "../components/DisplayPointTxt";
 import TabGroup from "../components/TabGroup";
+import CommTop10 from "../components/CommTop10";
 
 export default function CityInfo() {
   // for data
@@ -63,7 +64,7 @@ export default function CityInfo() {
   const [activeTab, setActiveTab] = useState(tabTypes[0]);
 
   const tabPages = {
-    Top10: null,
+    Top10: CommTop10,
     Prev: null,
   };
 
@@ -99,6 +100,7 @@ export default function CityInfo() {
               boxWidth="850px"
               boxHeight="300px"
               tabMarginR="100px"
+              boxPadding="35px 130px"
             />
           </div>
         </div>
