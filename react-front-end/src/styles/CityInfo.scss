@@ -1,0 +1,27 @@
+@import "../styles/variables/Variables.scss";
+
+.cityinfo-cont {
+  .city-top {
+    .city-info {
+      display: flex;
+
+      .dday {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 240px;
+
+        p {
+          font-size: 76px;
+          color: $mainColor;
+          font-family: $pointFont;
+          margin: 0;
+        }
+
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
