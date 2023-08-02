@@ -5,18 +5,20 @@ import "../styles/components/Products.scss";
 
 import Button from "./Button";
 
-import Sample from "../img/rating-second.png";
-
 export default function Product({
   prodImg,
+  productName,
   brandName = "Walmart",
   prodPoint = "000",
 }) {
   return (
     <div className="prod-container">
-      <div className="prod-box">
+      <div className="prod-box" title={productName}>
         <div className="prod-img">
-          <img src={Sample} alt="product" />
+          <img src={`/img/product/${prodImg}`} alt="product" />
+        </div>
+        <div className="prod-name">
+          <p>{productName}</p>
         </div>
         <div className="prod-brand">
           <p>{brandName}</p>

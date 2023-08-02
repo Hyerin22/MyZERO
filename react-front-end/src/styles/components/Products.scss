@@ -28,7 +28,19 @@
 
     .prod-img {
       height: 165px;
+
+      img {
+        width: 50%;
+      }
     }
+    .prod-name {
+      text-align: center;
+      p {
+        padding: 0 15px;
+        font-size: 18px;
+      }
+    }
+
     .prod-brand {
       border-top: 1px solid rgba(0, 0, 0, 0.15);
       border-bottom: 1px solid rgba(0, 0, 0, 0.15);
