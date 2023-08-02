@@ -28,7 +28,18 @@ export default function Nav() {
           <NavLink to="/HowTo">How to collect?</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/Store">Store</NavLink>
+          <NavLink
+            to="/Store"
+            className={`nav-link ${
+              currentPathname.includes("/Store") ||
+              currentPathname === "/Exchange" ||
+              currentPathname === "/MyBuy"
+                ? "active"
+                : ""
+            }`}
+          >
+            Store
+          </NavLink>
         </li>
         {/* just for now */}
         <li className="nav-item">

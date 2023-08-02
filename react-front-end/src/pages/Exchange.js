@@ -1,6 +1,3 @@
-// for backend
-// Buy button
-
 import React from "react";
 
 // data
@@ -11,8 +8,6 @@ import "../styles/Exchange.scss";
 
 // components
 import Product from "../components/Product";
-
-import Sample from "../img/rating-second.png";
 
 export default function Exchange() {
   return (
