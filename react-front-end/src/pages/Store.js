@@ -9,13 +9,16 @@ import DisplayPointTxt from "../components/DisplayPointTxt";
 import TabGroup from "../components/TabGroup";
 import Sidebar from "../components/Sidebar";
 
+// pages
+import Exchange from "./Exchange";
+
 export default function Store() {
   // for the tab menu
   const tabTypes = ["Exchange", "MyBuy"];
   const [activeTab, setActiveTab] = useState(tabTypes[0]);
 
   const tabPages = {
-    Exchange: null,
+    Exchange: Exchange,
     MyBuy: null,
   };
 
