@@ -11,6 +11,16 @@ export default function Product({
   brandName = "Walmart",
   prodPoint = "000",
 }) {
+  const handleBuyClick = () => {
+    if (
+      window.confirm(
+        `Are you sure you want to buy ${productName} ${prodPoint}pt?`
+      )
+    ) {
+      window.alert("Confirmed! You can check it on the MyBuy Tab!");
+    }
+  };
+
   return (
     <div className="prod-container">
       <div className="prod-box" title={productName}>
@@ -36,6 +46,7 @@ export default function Product({
           bgColor="white"
           radius="20px"
           color="#1d828e"
+          onClick={handleBuyClick}
         />
       </div>
     </div>
