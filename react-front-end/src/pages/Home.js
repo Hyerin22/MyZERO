@@ -15,6 +15,7 @@ import TabGroup from "../components/TabGroup";
 // pages
 import HomeMyZERO from "./HomeMyZERO";
 import Community from "./Community";
+import Setting from "./Setting";
 
 // images
 import ratingSecond from "../img/rating-second.png";
@@ -28,7 +29,7 @@ export default function Home() {
   const tabPages = {
     MyZERO: HomeMyZERO,
     Community: Community,
-    Setting: null,
+    Setting: Setting,
   };
 
   return (
