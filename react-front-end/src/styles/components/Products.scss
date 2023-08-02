@@ -1,0 +1,55 @@
+@import "../variables/Variables.scss";
+
+.prod-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .prod-box {
+    width: 218px;
+    height: auto;
+    border-radius: 18px;
+    background: $white;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      width: 218px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0px;
+    }
+
+    .prod-img {
+      height: 165px;
+
+      img {
+        width: 50%;
+      }
+    }
+    .prod-name {
+      text-align: center;
+      p {
+        padding: 0 15px;
+        font-size: 18px;
+      }
+    }
+
+    .prod-brand {
+      border-top: 1px solid rgba(0, 0, 0, 0.15);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    p {
+      font-family: $pointFont;
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import "../styles/variables/Variables.scss";
+
+.exchange-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px 0;
+}

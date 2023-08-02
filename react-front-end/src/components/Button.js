@@ -14,6 +14,7 @@ export default function Button(props) {
     margin = "0",
     radius,
     font = "D-DIN, sans-serif",
+    onClick,
   } = props;
   return (
     <div className="button-cont">
@@ -30,6 +31,7 @@ export default function Button(props) {
           color: color,
           borderRadius: radius,
         }}
+        onClick={onClick}
       >
         {title}
       </button>
