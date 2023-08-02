@@ -18,6 +18,15 @@ export default function Product({
       )
     ) {
       window.alert("Confirmed! You can check it on the MyBuy Tab!");
+
+      const purchaseInfo = {
+        prodImg: prodImg,
+        brandName: brandName,
+        prodPoint: prodPoint,
+        productName: productName,
+        purchaseDate: new Date().toLocaleString(),
+      };
+      localStorage.setItem("lastPurchase", JSON.stringify(purchaseInfo));
     }
   };
 
