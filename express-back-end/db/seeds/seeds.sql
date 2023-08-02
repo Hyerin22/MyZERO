@@ -28,6 +28,27 @@ INSERT INTO users (first_name, last_name, city_id, email, password_digest) VALUE
   ('Aarav', 'Sharma', 3,'aarav.sharma@example.com', 'pwd123'),
   ('Mei', 'Wong', 6,'mei.wong@example.com', 'pwd123');
 
+-- city user
+INSERT INTO city_user (user_id, city_id) VALUES
+  (1, 1),
+  (2, 2),
+  (3, 2),
+  (4, 4),
+  (5, 5),
+  (6, 1),
+  (7, 3),
+  (8, 2),
+  (9, 6),
+  (10, 4),
+  (11, 6),
+  (12, 1),
+  (13, 5),
+  (14, 3),
+  (15, 4),
+  (16, 2),
+  (17, 3),
+  (18, 6);
+
 -- points
 INSERT INTO points (user_id, city_id, point) VALUES
   (1, 1, 20),
@@ -71,12 +92,12 @@ INSERT INTO points (user_id, city_id, point) VALUES
 
 -- products
 INSERT INTO products (name, point, store, description, photo) VALUES
-  ('Reusable Foldable Grocery Tote Bags', 220, 'Walmart', '4-Packs, Size: 55*33*8cm, folding into a attached pocket, maximum load: 44lb', 'product01.jpg'),
+  ('Reusable Foldable Grocery Tote Bags', 120, 'Walmart', '4-Packs, Size: 55*33*8cm, folding into a attached pocket, maximum load: 44lb', 'product01.jpg'),
   ('Reusable K Cups For Keurig Coffee Pods', 340, 'Walmart', '2-Packs, stainless steel and 100% BPA, lead, and DEHP free', 'product02.jpg'),
   ('Reusable Silicone Sponge', 360, 'Walmart', '10-Packs, Size: 4.33"x4.33", BPA free, heat resistant to 500°F', 'product03.jpg'),
   ('Reusable Paper Towels Washable Roll', 700, 'Walmart', '48-Packs, Kitchen Paperless Paper Towels, 10" x 10", Cotton Cloth Paper Towels', 'product04.jpg'),
   ('Reusable Beeswax Food Storage Wrap', 280, 'Walmart', 'Set of Three, 7" 10" and 13" Natural Square Sheets', 'product05.jpg'),
-  ('Reusable Stainless Steel Straws', 180, 'Walmart', '10.5" Long, 2 Straight + 2 Bent + 1 Brush', 'product06.jpg'),
+  ('Reusable Stainless Steel Straws', 70, 'Walmart', '10.5" Long, 2 Straight + 2 Bent + 1 Brush', 'product06.jpg'),
   ('Greenzla Reusable Gallon Bags', 370, 'Superstore', '8-Packs, food-grade TPE material, 11"x10.6"', 'product07.jpg'),
   ('Reusable Air Fryer Silicone Pot', 410, 'Superstore', '3-Packs, Air Fryer Silicone Pot, 8.5"', 'product08.jpg'),
   ('Reusable Silicone Baking Mat', 360, 'Superstore', '3-Packs, Silicone Baking mat, 30 x 40 cm', 'product09.jpg');
@@ -84,5 +105,27 @@ INSERT INTO products (name, point, store, description, photo) VALUES
 
 -- usage
 INSERT INTO usage (user_id, product_id, point_id) VALUES
-  (1, 1, 1),
-  (2, 2, 2);
+  (1, NULL, 1),
+  (1, NULL, 19),
+  (1, NULL, 21),
+  (1, NULL, 23),
+  (1, NULL, 25),
+  (1, NULL, 27),
+  (1, NULL, 29),
+  (1, NULL, 31),
+  (1, NULL, 33),
+  (1, NULL, 35),
+  (1, NULL, 37),
+  (1, 1, NULL),
+  (2, NULL, 2),
+  (2, NULL, 20),
+  (2, NULL, 22),
+  (2, NULL, 24),
+  (2, NULL, 26),
+  (2, NULL, 28),
+  (2, NULL, 30),
+  (2, NULL, 32),
+  (2, NULL, 34),
+  (2, NULL, 36),
+  (2, NULL, 38),
+  (2, 6, NULL);
