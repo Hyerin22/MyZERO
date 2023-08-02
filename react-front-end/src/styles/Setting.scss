@@ -1,0 +1,41 @@
+@import "../styles/variables/Variables.scss";
+
+.setting-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    padding-left: 15px;
+    margin-top: 5px;
+  }
+
+  select {
+    width: 275px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    padding-left: 15px;
+    margin-top: 5px;
+  }
+
+  .input {
+    margin-bottom: 15px;
+  }
+
+  .pw > input {
+    font-size: 30px;
+  }
+
+  .setting-buttons {
+    display: flex;
+    margin-top: 60px;
+  }
+}
