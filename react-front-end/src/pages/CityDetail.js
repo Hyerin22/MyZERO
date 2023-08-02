@@ -14,7 +14,7 @@ import TabGroup from "../components/TabGroup";
 
 // pages
 import HomeMyZERO from "./HomeMyZERO";
-import Community from "./Community";
+import CommunityTab from "./CommunityTab";
 import CityInfo from "./CityInfo";
 import Setting from "./Setting";
 

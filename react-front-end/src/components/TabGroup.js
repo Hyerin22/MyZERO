@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { Link, useNavigate } from "react-router-dom";
+
 // styles
 import "../styles/components/TabGroup.scss";
 
@@ -28,6 +30,8 @@ export default function TabGroup({
     return null;
   };
 
+  const navigate = useNavigate();
+
   return (
     <>
       <div
@@ -37,7 +41,7 @@ export default function TabGroup({
         }}
       >
         {types.map((type) => (
-          <button
+          <div
             key={type}
             style={{
               fontSize: size,
@@ -45,10 +49,13 @@ export default function TabGroup({
               padding: padding,
             }}
             className={`tab ${activeTab === type ? "active" : ""}`}
-            onClick={() => setActiveTab(type)}
+            onClick={() => {
+              setActiveTab(type);
+              navigate(`/${type}`);
+            }}
           >
             {type}
-          </button>
+          </div>
         ))}
       </div>
       <div
