@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 // styles
 import "../styles/CityInfo.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 // components
 import DisplayPointTxt from "../components/DisplayPointTxt";
@@ -69,12 +71,23 @@ export default function CityInfo() {
     Prev: CommPrev,
   };
 
+  const navigate = useNavigate();
+
   return (
     <div className="cityinfo-cont">
       {city && (
         <div>
           <div className="city-top" key={city.id}>
-            <p>{city.address.city}</p>
+            <div className="city-name">
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                size="lg"
+                onClick={() => {
+                  navigate(-1);
+                }}
+              />
+              <p>{city.address.city}</p>
+            </div>
             <div className="city-info">
               <DisplayPointTxt
                 text=""

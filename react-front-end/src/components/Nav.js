@@ -1,14 +1,28 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import "../styles/components/Nav.scss";
 
 export default function Nav() {
+  const location = useLocation();
+  const currentPathname = location.pathname;
+
   return (
     <div>
       <ul>
         <li className="nav-item">
-          <NavLink to="/">Home</NavLink>
+          <NavLink
+            to="/MyZERO"
+            className={`nav-link ${
+              currentPathname.includes("/MyZERO") ||
+              currentPathname === "/Community" ||
+              currentPathname === "/Setting"
+                ? "active"
+                : ""
+            }`}
+          >
+            Home
+          </NavLink>
         </li>
         <li className="nav-item">
           <NavLink to="/HowTo">How to collect?</NavLink>

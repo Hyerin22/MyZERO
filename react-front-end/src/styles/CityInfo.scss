@@ -2,10 +2,14 @@
 
 .cityinfo-cont {
   .city-top {
-    p {
-      font-family: $pointFont;
-      font-size: 28px;
-      margin: 0;
+    .city-name {
+      display: flex;
+      align-items: baseline;
+      p {
+        font-family: $pointFont;
+        font-size: 28px;
+        margin: 0 0 0 10px;
+      }
     }
     .city-info {
       display: flex;

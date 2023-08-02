@@ -15,19 +15,21 @@ import Sidebar from "../components/Sidebar";
 
 // pages
 import HomeMyZERO from "./HomeMyZERO";
-import CommunityTab from "./CommunityTab";
+// import CommunityTab from "./CommunityTab";
 import SettingTab from "./SettingTab";
+import CommunityTab from "./CommunityTab";
 
-export default function Community() {
+export default function Setting() {
   // for the tab menu
   const tabTypes = ["MyZERO", "Community", "Setting"];
-  const [activeTab, setActiveTab] = useState(tabTypes[1]);
+  const [activeTab, setActiveTab] = useState(tabTypes[2]);
 
   const tabPages = {
     MyZERO: HomeMyZERO,
     Community: CommunityTab,
     Setting: SettingTab,
   };
+
   return (
     <div className="home-container">
       {/* Sidebar */}

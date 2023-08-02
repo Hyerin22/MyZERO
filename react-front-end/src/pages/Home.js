@@ -11,14 +11,16 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import DisplayPointTxt from "../components/DisplayPointTxt";
 import TabGroup from "../components/TabGroup";
+import Sidebar from "../components/Sidebar";
 
 // pages
 import HomeMyZERO from "./HomeMyZERO";
-import Community from "./Community";
+import CommunityTab from "./CommunityTab";
+import SettingTab from "./SettingTab";
 
 // images
-import ratingSecond from "../img/rating-second.png";
-import vancSymbol from "../img/vancouver-symbol.jpeg";
+// import ratingSecond from "../img/rating-second.png";
+// import vancSymbol from "../img/vancouver-symbol.jpeg";
 
 export default function Home() {
   // for the tab menu
@@ -27,14 +29,15 @@ export default function Home() {
 
   const tabPages = {
     MyZERO: HomeMyZERO,
-    Community: Community,
-    Setting: null,
+    Community: null,
+    Setting: SettingTab,
   };
 
   return (
     <div className="home-container">
       {/* Sidebar */}
-      <div className="sidebar">
+      <Sidebar />
+      {/* <div className="sidebar">
         <div className="sidebar-top">
           <RatingProfile ratingImage={ratingSecond} />
           <Profile symbol={vancSymbol} />
@@ -45,7 +48,7 @@ export default function Home() {
         <div className="footer">
           <Footer />
         </div>
-      </div>
+      </div> */}
       {/* Right side main content */}
       <div className="home-main">
         <div className="home-top">

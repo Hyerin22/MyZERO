@@ -14,8 +14,9 @@ import TabGroup from "../components/TabGroup";
 
 // pages
 import HomeMyZERO from "./HomeMyZERO";
-import Community from "./Community";
+import CommunityTab from "./CommunityTab";
 import CityInfo from "./CityInfo";
+import Setting from "./Setting";
 
 // images
 import ratingSecond from "../img/rating-second.png";
@@ -29,7 +30,7 @@ export default function CityDetail() {
   const tabPages = {
     MyZERO: HomeMyZERO,
     Community: CityInfo,
-    Setting: null,
+    Setting: Setting,
   };
 
   return (

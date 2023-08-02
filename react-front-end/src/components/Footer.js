@@ -7,7 +7,7 @@ import logo from "../img/Logo.png";
 export default function Footer() {
   return (
     <div className="footer-cont">
-      <NavLink to="/" className="footer">
+      <NavLink to="/MyZERO" className="footer">
         <img src={logo} alt="logo" />
       </NavLink>
     </div>
