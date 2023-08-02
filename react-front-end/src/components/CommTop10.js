@@ -74,7 +74,7 @@ export default function CommTop10() {
       </div>
       {fakeData.length > 0 &&
         fakeData.map((user) => (
-          <div className="top10-info">
+          <div className="top10-info" key={user.id}>
             <p>
               {user.username.slice(0, 3) + "*".repeat(user.username.length - 3)}
             </p>
