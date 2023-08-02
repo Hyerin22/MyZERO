@@ -1,96 +1,61 @@
-// for backend
-// save button
-// import the user's data -> when they click setting, their info should be displayed
-
 import React, { useState } from "react";
 
 // styles
-import "../styles/Setting.scss";
+import "../styles/Home.scss";
 
 // components
+import Nav from "../components/Nav";
 import RatingProfile from "../components/RatingProfile";
+import Profile from "../components/Profile";
+import Footer from "../components/Footer";
 import Button from "../components/Button";
+import DisplayPointTxt from "../components/DisplayPointTxt";
+import TabGroup from "../components/TabGroup";
+import Sidebar from "../components/Sidebar";
 
-// images
-import ratingSecond from "../img/rating-second.png";
-
-// fake data
-const cityNames = [
-  "Burnaby",
-  "Coquitlam",
-  "Langley",
-  "North Vancouver",
-  "Richmond",
-  "Vancouver",
-];
-
-const fakeUser = {
-  name: "John Doe",
-  email: "john.doe@example.com",
-  password: "fakepassword123",
-  location: "Burnaby",
-};
+// pages
+import HomeMyZERO from "./HomeMyZERO";
+// import CommunityTab from "./CommunityTab";
+import SettingTab from "./SettingTab";
+import CommunityTab from "./CommunityTab";
 
 export default function Setting() {
-  const [selectedCity, setSelectedCity] = useState("");
+  // for the tab menu
+  const tabTypes = ["MyZERO", "Community", "Setting"];
+  const [activeTab, setActiveTab] = useState(tabTypes[2]);
 
-  const handleCityChange = (event) => {
-    setSelectedCity(event.target.value);
+  const tabPages = {
+    MyZERO: HomeMyZERO,
+    Community: CommunityTab,
+    Setting: SettingTab,
   };
 
   return (
-    <div className="setting-cont">
-      <RatingProfile ratingImage={ratingSecond} margin="0 0 30px 0" />
-      <div className="input name">
-        <label>Name</label>
-        <br />
-        <input type="text" value={fakeUser.name} />
-        {/* <input type="text" placeholder="Last Name" /> */}
-        <br />
-      </div>
-      <div className="input email">
-        <label>Email</label>
-        <br />
-        <input type="email" value={fakeUser.email} />
-        <br />
-      </div>
-      <div className="input pw">
-        <label>Password</label>
-        <br />
-        <input type="password" value={fakeUser.password} />
-      </div>
-      <div className="loation">
-        <label>My Community</label> <br />
-        <select
-          id="cityDropdown"
-          // defaultValue={fakeUser.location}
-          value={selectedCity}
-          onChange={handleCityChange}
-        >
-          <option value="">{fakeUser.location}</option>
-          {cityNames.map((cityName) => (
-            <option key={cityName} value={cityName}>
-              {cityName}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="setting-buttons">
-        <Button
-          title="Logout"
-          border="3px solid #1d828e"
-          bgColor="white"
-          radius="20px"
-          color="#1d828e"
-          margin="0 25px 0 0"
-        />
-        <Button
-          title="Save"
-          color="#ffffff"
-          border="none"
-          bgColor="linear-gradient(180deg, #fddb70 0%, #fead5e 100%)"
-          radius="18px"
-        />
+    <div className="home-container">
+      {/* Sidebar */}
+      <Sidebar />
+      {/* Right side main content */}
+      <div className="home-main">
+        <div className="home-top">
+          <DisplayPointTxt
+            size="26px"
+            point="1,403"
+            color="#1d828e"
+            pointSize="76px"
+            pointMargin="0px 7px"
+          />
+        </div>
+        <div className="home-content">
+          <div className="tabs-container">
+            <TabGroup
+              types={tabTypes}
+              tabPages={tabPages}
+              marginL="10px"
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

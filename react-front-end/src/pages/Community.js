@@ -1,52 +1,60 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // styles
-import "../styles/Community.scss";
+import "../styles/Home.scss";
 
 // components
-import City from "../components/City";
+import Nav from "../components/Nav";
+import RatingProfile from "../components/RatingProfile";
+import Profile from "../components/Profile";
+import Footer from "../components/Footer";
+import Button from "../components/Button";
+import DisplayPointTxt from "../components/DisplayPointTxt";
+import TabGroup from "../components/TabGroup";
+import Sidebar from "../components/Sidebar";
 
-// imgs
-import vancouver from "../img/vancouver.jpeg";
+// pages
+import HomeMyZERO from "./HomeMyZERO";
+import CommunityTab from "./CommunityTab";
+import SettingTab from "./SettingTab";
 
 export default function Community() {
-  // for data
-  const [data, setData] = useState([]);
+  // for the tab menu
+  const tabTypes = ["MyZERO", "Community", "Setting"];
+  const [activeTab, setActiveTab] = useState(tabTypes[1]);
 
-  const getData = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const jsonData = await response.json();
-    setData(jsonData);
+  const tabPages = {
+    MyZERO: HomeMyZERO,
+    Community: CommunityTab,
+    Setting: SettingTab,
   };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
-    <div className="community-cont">
-      {data.length > 0 &&
-        data.map((city) => (
-          <City
-            key={city.id}
-            id={city.id}
-            cityName={city.address.city}
-            cityImg={vancouver}
-            joinedPeople="00"
+    <div className="home-container">
+      {/* Sidebar */}
+      <Sidebar />
+      {/* Right side main content */}
+      <div className="home-main">
+        <div className="home-top">
+          <DisplayPointTxt
+            size="26px"
+            point="1,403"
+            color="#1d828e"
+            pointSize="76px"
+            pointMargin="0px 7px"
           />
-        ))}
-      {/* {data.map((city) => ( */}
-      {/* <City cityName="Vancouver" cityImg={vancouver} joinedPeople="00" />
-          <City
-            cityName="North Vancouver"
-            cityImg={vancouver}
-            joinedPeople="00"
-          /> */}
-      {/* <City cityName="Burnaby" cityImg={vancouver} joinedPeople="00" />
-      <City cityName="Langley" cityImg={vancouver} joinedPeople="00" />
-      <City cityName="Richmond" cityImg={vancouver} joinedPeople="00" />
-      <City cityName="Coquitlam" cityImg={vancouver} joinedPeople="00" /> */}
-      {/* ))} */}
+        </div>
+        <div className="home-content">
+          <div className="tabs-container">
+            <TabGroup
+              types={tabTypes}
+              tabPages={tabPages}
+              marginL="10px"
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
