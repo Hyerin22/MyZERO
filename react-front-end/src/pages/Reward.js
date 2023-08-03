@@ -4,14 +4,14 @@ import React from "react";
 import { fakeProduct } from "../mockdata/fakeData";
 
 // styles
-import "../styles/Exchange.scss";
+import "../styles/Reward.scss";
 
 // components
 import Product from "../components/Product";
 
-export default function Exchange() {
+export default function Reward() {
   return (
-    <div className="exchange-cont">
+    <div className="reward-cont">
       {fakeProduct.length > 0 &&
         fakeProduct.map((prod) => (
           <Product

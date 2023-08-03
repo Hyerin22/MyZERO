@@ -8,17 +8,16 @@ import TabGroup from "../components/TabGroup";
 import Sidebar from "../components/Sidebar";
 
 // pages
-import Exchange from "./Exchange";
+import Reward from "./Reward";
 import MyBuyInfo from "./MyBuyInfo";
-// import MyBuy from "./MyBuy";
 
 export default function MyBuy() {
   // for the tab menu
-  const tabTypes = ["Exchange", "MyBuy"];
+  const tabTypes = ["Reward", "MyBuy"];
   const [activeTab, setActiveTab] = useState(tabTypes[1]);
 
   const tabPages = {
-    Exchange: Exchange,
+    Reward: Reward,
     MyBuy: MyBuyInfo,
   };
 

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 // styles
-// import "../styles/Home.scss"
-import "../styles/Store.scss";
+import "../styles/Home.scss";
 
 // components
 import DisplayPointTxt from "../components/DisplayPointTxt";
@@ -10,16 +9,16 @@ import TabGroup from "../components/TabGroup";
 import Sidebar from "../components/Sidebar";
 
 // pages
-import Exchange from "./Exchange";
+import Reward from "./Reward";
 import MyBuyInfo from "./MyBuyInfo";
 
 export default function Store() {
   // for the tab menu
-  const tabTypes = ["Exchange", "MyBuy"];
+  const tabTypes = ["Reward", "MyBuy"];
   const [activeTab, setActiveTab] = useState(tabTypes[0]);
 
   const tabPages = {
-    Exchange: Exchange,
+    Reward: Reward,
     MyBuy: MyBuyInfo,
   };
 
