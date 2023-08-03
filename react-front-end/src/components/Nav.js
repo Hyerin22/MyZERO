@@ -29,10 +29,10 @@ export default function Nav() {
         </li>
         <li className="nav-item">
           <NavLink
-            to="/Store"
+            to="/Reward"
             className={`nav-link ${
               currentPathname.includes("/Store") ||
-              currentPathname === "/Exchange" ||
+              currentPathname === "/Reward" ||
               currentPathname === "/MyBuy"
                 ? "active"
                 : ""

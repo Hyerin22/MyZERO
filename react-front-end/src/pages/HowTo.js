@@ -74,10 +74,9 @@ export default function HowTo() {
               </li>
               <li>
                 Step 6: Check the Store and Select Products for Exchange Explore
-                the "Rewards" or "Exchange" section within MyZERO. Browse
-                through a variety of products or gift cards available for point
-                exchange. Select the items you wish to redeem with your earned
-                points.{" "}
+                the "Rewards" section within MyZERO. Browse through a variety of
+                products or gift cards available for point exchange. Select the
+                items you wish to redeem with your earned points.{" "}
               </li>
               <li>
                 Step 7: Enjoy Your Shopping After selecting your desired items,
