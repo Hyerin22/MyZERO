@@ -1,7 +1,7 @@
 import React from "react";
 
 // data
-import fakeProduct from "../mockdata/fakeProduct";
+import { fakeProduct } from "../mockdata/fakeData";
 
 // styles
 import "../styles/Exchange.scss";
