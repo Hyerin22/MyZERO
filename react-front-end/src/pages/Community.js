@@ -12,11 +12,9 @@ import Button from "../components/Button";
 import DisplayPointTxt from "../components/DisplayPointTxt";
 import TabGroup from "../components/TabGroup";
 import Sidebar from "../components/Sidebar";
-
-// pages
 import HomeMyZERO from "./HomeMyZERO";
-import CommunityTab from "./CommunityTab";
-import SettingTab from "./SettingTab";
+import CommTabCities from "../components/CommTabCities";
+import SettingTab from "../components/SettingTab";
 
 export default function Community() {
   // for the tab menu
@@ -25,7 +23,7 @@ export default function Community() {
 
   const tabPages = {
     MyZERO: HomeMyZERO,
-    Community: CommunityTab,
+    Community: CommTabCities,
     Setting: SettingTab,
   };
   return (

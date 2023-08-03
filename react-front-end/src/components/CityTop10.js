@@ -1,9 +1,9 @@
 import React from "react";
-import "../styles/components/CommTop10.scss";
+import "../styles/components/CityTop10.scss";
 
 import { fakeTop10 } from "../mockdata/fakeData";
 
-export default function CommTop10() {
+export default function CityTop10() {
   // const fakeData = [
   // {
   //   id: 1,

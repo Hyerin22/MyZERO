@@ -6,10 +6,8 @@ import "../styles/MyBuy.scss";
 import DisplayPointTxt from "../components/DisplayPointTxt";
 import TabGroup from "../components/TabGroup";
 import Sidebar from "../components/Sidebar";
-
-// pages
 import Reward from "./Reward";
-import MyBuyInfo from "./MyBuyInfo";
+import MyBuyInfo from "../components/MyBuyInfo";
 
 export default function MyBuy() {
   // for the tab menu

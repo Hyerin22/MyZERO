@@ -12,11 +12,9 @@ import Button from "../components/Button";
 import DisplayPointTxt from "../components/DisplayPointTxt";
 import TabGroup from "../components/TabGroup";
 import Sidebar from "../components/Sidebar";
-
-// pages
+import CommTabCities from "../components/CommTabCities";
 import HomeMyZERO from "./HomeMyZERO";
-import CommunityTab from "./CommunityTab";
-import SettingTab from "./SettingTab";
+import SettingTab from "../components/SettingTab";
 
 // images
 // import ratingSecond from "../img/rating-second.png";
@@ -29,7 +27,7 @@ export default function Home() {
 
   const tabPages = {
     MyZERO: HomeMyZERO,
-    Community: null,
+    Community: CommTabCities,
     Setting: SettingTab,
   };
 

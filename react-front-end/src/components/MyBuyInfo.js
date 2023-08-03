@@ -3,9 +3,9 @@ import React from "react";
 // data
 import { fakeHistory } from "../mockdata/fakeData";
 
-import "../styles/MyBuyInfo.scss";
+import "../styles/components/MyBuyInfo.scss";
 
-import Product from "../components/Product";
+import Product from "./Product";
 
 export default function MyBuyInfo() {
   const purchaseHistory = JSON.parse(localStorage.getItem("purchased"));

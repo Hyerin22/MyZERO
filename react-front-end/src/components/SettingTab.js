@@ -5,11 +5,11 @@
 import React, { useState } from "react";
 
 // styles
-import "../styles/SettingTab.scss";
+import "../styles/components/SettingTab.scss";
 
 // components
-import RatingProfile from "../components/RatingProfile";
-import Button from "../components/Button";
+import RatingProfile from "./RatingProfile";
+import Button from "./Button";
 
 // images
 import ratingSecond from "../img/rating-second.png";
