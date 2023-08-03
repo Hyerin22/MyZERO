@@ -29,7 +29,7 @@ export default function LoginLeftSide() {
       </div>
 
       <div className="left-bot">
-        <Footer />
+        <Footer to="/" />
       </div>
     </div>
   );
