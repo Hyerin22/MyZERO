@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 // styles
-import "../styles/CommunityTab.scss";
+import "../styles/components/CommTabCities.scss";
 
 // components
-import City from "../components/City";
+import City from "./City";
 
 // imgs
 import vancouver from "../img/vancouver.jpeg";
 
-export default function CommunityTab() {
+export default function CommTabCities() {
   // for data
   const [data, setData] = useState([]);
 

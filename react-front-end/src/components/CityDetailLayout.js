@@ -1,28 +1,25 @@
 import React, { useState, useEffect } from "react";
 
 // styles
-import "../styles/CityDetail.scss";
+import "../styles/components/CityDetailLayout.scss";
 
 // components
-import Nav from "../components/Nav";
-import RatingProfile from "../components/RatingProfile";
-import Profile from "../components/Profile";
-import Footer from "../components/Footer";
-import Button from "../components/Button";
-import DisplayPointTxt from "../components/DisplayPointTxt";
-import TabGroup from "../components/TabGroup";
-
-// pages
-import HomeMyZERO from "./HomeMyZERO";
-import CommunityTab from "./CommunityTab";
+import Nav from "./Nav";
+import RatingProfile from "./RatingProfile";
+import Profile from "./Profile";
+import Footer from "./Footer";
+import Button from "./Button";
+import DisplayPointTxt from "./DisplayPointTxt";
+import TabGroup from "./TabGroup";
 import CityInfo from "./CityInfo";
-import Setting from "./Setting";
+import HomeMyZERO from "../pages/HomeMyZERO";
+import Setting from "../pages/Setting";
 
 // images
 import ratingSecond from "../img/rating-second.png";
 import vancSymbol from "../img/vancouver-symbol.jpeg";
 
-export default function CityDetail() {
+export default function CityDetailLayout() {
   // for the tab menu
   const tabTypes = ["MyZERO", "Community", "Setting"];
   const [activeTab, setActiveTab] = useState(tabTypes[1]);

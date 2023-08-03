@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "../pages/Home";
-import CityDetail from "../pages/CityDetail";
+import CityDetailLayout from "../components/CityDetailLayout";
 import HowTo from "../pages/HowTo";
 import Community from "../pages/Community";
 import Setting from "../pages/Setting";
@@ -13,7 +13,7 @@ export default function AppRouter() {
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/MyZero" element={<Home />}></Route>
-        <Route path="city/:id" element={<CityDetail />}></Route>
+        <Route path="city/:id" element={<CityDetailLayout />}></Route>
         <Route path="/HowTo" element={<HowTo />}></Route>
         <Route path="/Community" element={<Community />}></Route>
         <Route path="/Setting" element={<Setting />}></Route>

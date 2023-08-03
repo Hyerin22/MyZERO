@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 // styles
-import "../styles/CityInfo.scss";
+import "../styles/components/CityInfo.scss";
+
+// icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 // components
-import DisplayPointTxt from "../components/DisplayPointTxt";
-import TabGroup from "../components/TabGroup";
-import CommTop10 from "../components/CommTop10";
-import CommPrev from "../components/CommPrev";
+import DisplayPointTxt from "./DisplayPointTxt";
+import TabGroup from "./TabGroup";
+import CityTop10 from "./CityTop10";
+import CityPrev from "./CityPrev";
 
 export default function CityInfo() {
   // for data
@@ -67,8 +69,8 @@ export default function CityInfo() {
   const [activeTab, setActiveTab] = useState(tabTypes[0]);
 
   const tabPages = {
-    Top10: CommTop10,
-    Prev: CommPrev,
+    Top10: CityTop10,
+    Prev: CityPrev,
   };
 
   const navigate = useNavigate();
