@@ -44,20 +44,20 @@ export default function SettingTab() {
       <div className="input name">
         <label>Name</label>
         <br />
-        <input type="text" value={fakeUser.name} />
+        <input type="text" defaultValue={fakeUser.name} />
         {/* <input type="text" placeholder="Last Name" /> */}
         <br />
       </div>
       <div className="input email">
         <label>Email</label>
         <br />
-        <input type="email" value={fakeUser.email} />
+        <input type="email" defaultValue={fakeUser.email} />
         <br />
       </div>
       <div className="input pw">
         <label>Password</label>
         <br />
-        <input type="password" value={fakeUser.password} />
+        <input type="password" defaultValue={fakeUser.password} />
       </div>
       <div className="loation">
         <label>My Community</label> <br />
