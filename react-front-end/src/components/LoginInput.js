@@ -43,7 +43,6 @@ export default function LoginInput({
           radius="30px"
           color="white"
           margin="0 0 0 0"
-          // margin="0 0 10px 0"
           width="335px"
           onClick={onClickFunc}
         />
@@ -55,17 +54,8 @@ export default function LoginInput({
           }}
         >
           <p>Want to join MyZERO?</p>
-          {/* <div /> */}
           <Link to="/Signup">Sign up</Link>
         </div>
-        {/* <Button
-          title="Sign Up"
-          color="#1d828e"
-          border="3px solid #1d828e"
-          bgColor="white"
-          radius="30px"
-          width="335px"
-        /> */}
       </div>
     </div>
   );
