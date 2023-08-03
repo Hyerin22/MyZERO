@@ -30,8 +30,16 @@
     margin-bottom: 15px;
   }
 
-  .pw > input {
-    font-size: 30px;
+  .pw {
+    // display: flex;
+    // align-items: baseline;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 17px;
+      right: -40px;
+    }
   }
 
   .setting-buttons {

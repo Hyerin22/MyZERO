@@ -14,6 +14,10 @@ import Button from "./Button";
 // images
 import ratingSecond from "../img/rating-second.png";
 
+// icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
 // fake data
 const cityNames = [
   "Burnaby",
@@ -33,9 +37,14 @@ const fakeUser = {
 
 export default function SettingTab() {
   const [selectedCity, setSelectedCity] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleCityChange = (event) => {
     setSelectedCity(event.target.value);
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   return (
@@ -45,7 +54,6 @@ export default function SettingTab() {
         <label>Name</label>
         <br />
         <input type="text" defaultValue={fakeUser.name} />
-        {/* <input type="text" placeholder="Last Name" /> */}
         <br />
       </div>
       <div className="input email">
@@ -54,10 +62,23 @@ export default function SettingTab() {
         <input type="email" defaultValue={fakeUser.email} />
         <br />
       </div>
-      <div className="input pw">
+      <div className="input">
         <label>Password</label>
         <br />
-        <input type="password" defaultValue={fakeUser.password} />
+        <div className="pw">
+          <input
+            type={showPassword ? "text" : "password"}
+            defaultValue={fakeUser.password}
+            style={{
+              fontSize: showPassword ? "20px" : "30px",
+            }}
+          />
+          <FontAwesomeIcon
+            icon={showPassword ? faEye : faEyeSlash}
+            size="lg"
+            onClick={handleTogglePassword}
+          />
+        </div>
       </div>
       <div className="loation">
         <label>My Community</label> <br />
