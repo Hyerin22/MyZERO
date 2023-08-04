@@ -7,7 +7,9 @@ import Footer from "./Footer";
 export default function LoginLeftSide() {
   return (
     <div className="left-side">
+      {/* <div className="left-bot"></div> */}
       <div className="left-top">
+        <Footer to="/" />
         <p className="welcome">
           Welcome to <span>MyZERO</span>!
         </p>
@@ -26,10 +28,6 @@ export default function LoginLeftSide() {
           Join our thriving eco-warrior community today
           <br /> and let's make a positive impact together!
         </p>
-      </div>
-
-      <div className="left-bot">
-        <Footer to="/" />
       </div>
     </div>
   );
