@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,8 +7,8 @@ import {
   BarElement,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 
 // styles
 import "../styles/HomeMyZERO.scss";
@@ -21,26 +21,19 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
 import DisplayPointTxt from "../components/DisplayPointTxt";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 export const options = {
-  responsive: true
+  responsive: true,
 };
 
 export default function HomeMyZERO() {
-
   const [state, setState] = useState({
     id: 1,
     three_month: {},
     two_month: {},
     one_month: {},
-    this_month: {}
+    this_month: {},
   });
 
   const [selectedMonths, setSelectedMonths] = useState([]);
@@ -59,27 +52,25 @@ export default function HomeMyZERO() {
   }, [currentMonth]);
 
   const getMonthName = (monthNumber) => {
-    if (monthNumber == '1') return 'January';
-    else if (monthNumber == '2') return 'February';
-    else if (monthNumber == '3') return 'March';
-    else if (monthNumber == '4') return 'April';
-    else if (monthNumber == '5') return 'May';
-    else if (monthNumber == '6') return 'June';
-    else if (monthNumber == '7') return 'July';
-    else if (monthNumber == '8') return 'August';
-    else if (monthNumber == '9') return 'September';
-    else if (monthNumber == '10') return 'October';
-    else if (monthNumber == '11') return 'November';
-    else if (monthNumber == '12') return 'December';
-    else return 'Invalid Month';
-  }
+    if (monthNumber == "1") return "January";
+    else if (monthNumber == "2") return "February";
+    else if (monthNumber == "3") return "March";
+    else if (monthNumber == "4") return "April";
+    else if (monthNumber == "5") return "May";
+    else if (monthNumber == "6") return "June";
+    else if (monthNumber == "7") return "July";
+    else if (monthNumber == "8") return "August";
+    else if (monthNumber == "9") return "September";
+    else if (monthNumber == "10") return "October";
+    else if (monthNumber == "11") return "November";
+    else if (monthNumber == "12") return "December";
+    else return "Invalid Month";
+  };
   // Points collected this month
   useEffect(() => {
-    axios.get(`/api/points/${state.id}/month?months=${selectedMonths.join(',')}`)
+    axios
+      .get(`/api/points/${state.id}/month?months=${selectedMonths.join(",")}`)
       .then((res) => {
-
-
-
         // Convert numeric month to English name
         const formattedData = res.data.map((item) => ({
           month: getMonthName(item.month),
@@ -91,15 +82,15 @@ export default function HomeMyZERO() {
         const one_month = formattedData[2];
         const this_month = formattedData[3];
 
-        setState(prev => ({
+        setState((prev) => ({
           ...prev,
           three_month,
           two_month,
           one_month,
-          this_month
+          this_month,
         }));
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("connect error:", err.message);
       });
   }, []);
@@ -108,30 +99,29 @@ export default function HomeMyZERO() {
     state.three_month.month,
     state.two_month.month,
     state.one_month.month,
-    state.this_month.month
+    state.this_month.month,
   ];
-  
+
   const points = [
     state.three_month.month_points,
     state.two_month.month_points,
     state.one_month.month_points,
-    state.this_month.month_points
+    state.this_month.month_points,
   ];
-  
+
   const data = {
-    labels: months, 
+    labels: months,
     datasets: [
       {
-        label: 'Points',
+        label: "Points",
         data: points,
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, .2)',
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, .2)",
         borderWidth: 1,
       },
     ],
   };
-  console.log('data', data)
-
+  console.log("data", data);
 
   return (
     <div className="myZero-cont">
@@ -162,7 +152,10 @@ export default function HomeMyZERO() {
       <div className="myZero-mid">
         <div className="graph-cont2">
           <FontAwesomeIcon icon={faInfoCircle} size="lg" />
-          <span>Trees collected since you joined. You can get the tree when you collect over 250 point a month.</span>
+          <span>
+            Trees collected since you joined. You can get the tree when you
+            collect over 250 point a month.
+          </span>
           Still, we have a lot of seeds🪹. Let's try to grow the trees!
         </div>
       </div>
