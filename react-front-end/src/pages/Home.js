@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 // styles
 import "../styles/Home.scss";
@@ -26,17 +27,21 @@ export default function Home() {
   const tabTypes = ["MyZERO", "Community", "Setting"];
   const [activeTab, setActiveTab] = useState(tabTypes[0]);
 
+
+
   const tabPages = {
     MyZERO: HomeMyZERO,
     Community: CommTabCities,
     Setting: SettingTab,
   };
 
+
   // for Hamburger menu
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
 
   return (
     <div className="home-container">
@@ -48,7 +53,6 @@ export default function Home() {
         <div className="home-top">
           <DisplayPointTxt
             size="26px"
-            point="1,403"
             color="#1d828e"
             pointSize="76px"
             pointMargin="0px 7px"

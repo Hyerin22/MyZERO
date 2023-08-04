@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 // styles
 import "../styles/Home.scss";
@@ -21,11 +22,13 @@ export default function Community() {
   const tabTypes = ["MyZERO", "Community", "Setting"];
   const [activeTab, setActiveTab] = useState(tabTypes[1]);
 
+ 
   const tabPages = {
     MyZERO: HomeMyZERO,
     Community: CommTabCities,
     Setting: SettingTab,
   };
+
   return (
     <div className="home-container">
       {/* Sidebar */}
@@ -35,7 +38,6 @@ export default function Community() {
         <div className="home-top">
           <DisplayPointTxt
             size="26px"
-            point="1,403"
             color="#1d828e"
             pointSize="76px"
             pointMargin="0px 7px"

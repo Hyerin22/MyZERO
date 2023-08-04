@@ -19,22 +19,25 @@ router.get('/', (req, res) => {
 
 // Read one user's each month point
 router.get('/:id/month', (req, res) => {
+  const user_id = req.params.id;
+  const selectedMonths = req.query.months.split(','); 
+
+  // Modify the database query to use the selectedMonths
   pointQueries
-    .eachMonthPoint(req.params.id)
-    .then(point => {
-      // If  user not found
+    .eachMonthPoint(user_id, selectedMonths)
+    .then((point) => {
+      // If point not found
       if (!point) {
         return res.json("point not found");
       }
       return res.json(point);
     })
-    .catch(error => {
+    .catch((error) => {
       res
         .status(500)
         .json({ message: 'Error reading point', error: error.message });
     });
 });
-
 
 // Create point
 router.post('/', (req, res) => {
