@@ -27,7 +27,6 @@ export default function Store() {
         <div className="home-top">
           <DisplayPointTxt
             size="26px"
-            point="1,403"
             color="#1d828e"
             pointSize="76px"
             pointMargin="0px 7px"

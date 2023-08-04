@@ -9,7 +9,7 @@ const cityUserQueries = require('../db/queries/cityUser');
 // Read all city-user
 router.get('/', (req, res) => {
   cityUserQueries
-    .getAll()
+    .howManyUsers()
     .then(cityUser => res.json(cityUser))
     .catch(error => {
       res

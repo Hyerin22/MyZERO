@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 // Counting city's users
-router.get('/:id', (req, res) => {
+router.get('/users', (req, res) => {
   cityQueries
     .howManyUsers(req.params.id)
     .then(city => {
