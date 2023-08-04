@@ -43,6 +43,7 @@ export default function HomeMyZERO() {
     this_month: {}
   });
 
+  const [loading, setLoading] = useState(true);
   const [selectedMonths, setSelectedMonths] = useState([]);
   const currentMonth = new Date().getMonth() + 1;
 
@@ -99,9 +100,12 @@ export default function HomeMyZERO() {
           one_month,
           this_month
         }));
+
+        setLoading(false);
       })
       .catch(err => {
         console.error("connect error:", err.message);
+        setLoading(false);
       });
   }, []);
 
@@ -131,8 +135,11 @@ export default function HomeMyZERO() {
       },
     ],
   };
-        console.log('state', state);
-
+  console.log('state', state);
+  
+  if (loading) {
+    return <div>Loading...</div>; // You can use a loading spinner or any loading message here
+  }
 
   return (
     <div className="myZero-cont">
