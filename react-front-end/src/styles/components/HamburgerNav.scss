@@ -101,7 +101,7 @@
   }
 
   .links {
-    padding: 0px 160px 0px 60px;
+    padding: 0px 100px 0px 60px;
     margin-top: 80px;
     display: flex;
     flex-direction: column;
@@ -117,5 +117,11 @@
         color: $mainColor;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .hamNav-cont {
+    display: none;
   }
 }
