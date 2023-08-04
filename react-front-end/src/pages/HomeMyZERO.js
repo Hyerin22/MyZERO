@@ -102,17 +102,17 @@ export default function HomeMyZERO() {
   }, []);
 
   const months = [
-    state.three_month.month,
-    state.two_month.month,
-    state.one_month.month,
-    state.this_month.month,
+    state.three_month?.month,
+    state.two_month?.month,
+    state.one_month?.month,
+    state.this_month?.month,
   ];
 
   const points = [
-    state.three_month.month_points,
-    state.two_month.month_points,
-    state.one_month.month_points,
-    state.this_month.month_points,
+    state.three_month?.month_points,
+    state.two_month?.month_points,
+    state.one_month?.month_points,
+    state.this_month?.month_points,
   ];
 
   const data = {
@@ -127,8 +127,8 @@ export default function HomeMyZERO() {
       },
     ],
   };
-  console.log('state', state);
-  
+  console.log("state", state);
+
   if (loading) {
     return <div>Loading...</div>; // You can use a loading spinner or any loading message here
   }
@@ -146,7 +146,7 @@ export default function HomeMyZERO() {
         />
         <DisplayPointTxt
           text="This month you collected"
-          point={state.this_month.month_points}
+          point={state.this_month?.month_points}
           size="24px"
           pointSize="64px"
           alignItems="center"
