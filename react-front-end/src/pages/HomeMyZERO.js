@@ -60,18 +60,18 @@ export default function HomeMyZERO() {
   }, [currentMonth]);
 
   const getMonthName = (monthNumber) => {
-    if (monthNumber == '1') return 'January';
-    else if (monthNumber == '2') return 'February';
-    else if (monthNumber == '3') return 'March';
-    else if (monthNumber == '4') return 'April';
-    else if (monthNumber == '5') return 'May';
-    else if (monthNumber == '6') return 'June';
-    else if (monthNumber == '7') return 'July';
-    else if (monthNumber == '8') return 'August';
-    else if (monthNumber == '9') return 'September';
-    else if (monthNumber == '10') return 'October';
-    else if (monthNumber == '11') return 'November';
-    else if (monthNumber == '12') return 'December';
+    if (monthNumber === 1) return 'January';
+    else if (monthNumber === 2) return 'February';
+    else if (monthNumber === 3) return 'March';
+    else if (monthNumber === 4) return 'April';
+    else if (monthNumber === 5) return 'May';
+    else if (monthNumber === 6) return 'June';
+    else if (monthNumber === 7) return 'July';
+    else if (monthNumber === 8) return 'August';
+    else if (monthNumber === 9) return 'September';
+    else if (monthNumber === 10) return 'October';
+    else if (monthNumber === 11) return 'November';
+    else if (monthNumber === 12) return 'December';
     else return 'Invalid Month';
   }
   // Points collected this month
@@ -110,17 +110,17 @@ export default function HomeMyZERO() {
   }, []);
 
   const months = [
-    state.three_month.month,
-    state.two_month.month,
-    state.one_month.month,
-    state.this_month.month
+    state.three_month?.month,
+    state.two_month?.month,
+    state.one_month?.month,
+    state.this_month?.month
   ];
 
   const points = [
-    state.three_month.month_points,
-    state.two_month.month_points,
-    state.one_month.month_points,
-    state.this_month.month_points
+    state.three_month?.month_points,
+    state.two_month?.month_points,
+    state.one_month?.month_points,
+    state.this_month?.month_points
   ];
   
   const data = {
@@ -135,8 +135,8 @@ export default function HomeMyZERO() {
       },
     ],
   };
-  console.log('state', state);
-  
+  console.log('months', months);
+
   if (loading) {
     return <div>Loading...</div>; // You can use a loading spinner or any loading message here
   }
@@ -154,7 +154,7 @@ export default function HomeMyZERO() {
         />
         <DisplayPointTxt
           text="This month you collected"
-          point={state.this_month.month_points}
+          point={state.this_month?.month_points}
           size="24px"
           pointSize="64px"
           alignItems="center"
