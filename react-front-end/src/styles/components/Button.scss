@@ -9,7 +9,14 @@
 @media only screen and (max-width: 600px) {
   .button-cont {
     button {
-      width: 270px !important;
+      width: 180px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .button-cont {
+    button {
       font-size: 20px !important;
     }
   }

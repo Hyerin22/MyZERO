@@ -18,13 +18,13 @@
     flex-direction: column;
     justify-content: center;
     flex: 4;
-    padding: 0 100px;
+    // padding: 0 100px;
 
     .home-top {
       display: flex;
       justify-content: flex-end;
-      margin-top: 20px;
       margin-bottom: 10px;
+      margin-right: 100px;
     }
 
     .home-content {
@@ -34,6 +34,34 @@
       .tabs-container {
         margin-top: 20px;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home-container {
+    .home-main {
+      .home-top {
+        margin-right: 0;
+      }
+      .home-content {
+        .tabs-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .home-container {
+    display: flex;
+    flex-direction: column;
+
+    .home-main {
+      padding: 0 60px;
     }
   }
 }
