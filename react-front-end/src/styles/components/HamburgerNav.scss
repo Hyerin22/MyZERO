@@ -1,0 +1,82 @@
+@import "../variables/Variables.scss";
+
+.hamNav-cont {
+  .hamNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1000;
+
+    .line1,
+    .line2,
+    .line3 {
+      width: 30px;
+      height: 2px;
+      background-color: $mainColor;
+      border-radius: 3px;
+      transition: 0.4s ease all;
+    }
+
+    .line1After {
+      width: 30px;
+      height: 2px;
+      background-color: $mainColor;
+      border-radius: 3px;
+      transition: 0.4s ease all;
+      transform: rotate(-45deg) translate(-7px, 5px);
+    }
+
+    .line2After {
+      transition: 0.4s ease all;
+      opacity: 0;
+    }
+
+    .line3After {
+      width: 30px;
+      height: 2px;
+      background-color: $mainColor;
+      border-radius: 3px;
+      transition: 0.4s ease all;
+      transform: rotate(45deg) translate(-7px, -5px);
+    }
+  }
+
+  .link-cont {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    display: flex;
+    justify-content: left;
+    background-color: $white;
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .links {
+    padding: 0px 160px 0px 60px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+      color: $black;
+      font-size: 20px;
+      font-weight: 400;
+      margin: 10px;
+
+      &.active {
+        color: $mainColor;
+      }
+    }
+  }
+}
