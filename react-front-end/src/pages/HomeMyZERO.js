@@ -162,7 +162,7 @@ export default function HomeMyZERO() {
       <div className="myZero-mid">
         <div className="graph-cont2">
           <FontAwesomeIcon icon={faInfoCircle} size="lg" />
-          <span>Trees collected since you joined</span>
+          <span>Trees collected since you joined. You can get the tree when you collect over 250 point a month.</span>
           Still, we have a lot of seeds🪹. Let's try to grow the trees!
         </div>
       </div>

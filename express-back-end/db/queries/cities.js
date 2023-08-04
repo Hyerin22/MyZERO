@@ -7,20 +7,7 @@ const getAll = () => {
     .then(res => res.rows);
 };
 
-// Counting city's users
-const howManyUsers = (city_id) => {
-  const queryString = `
-    SELECT
-      city_id,
-      COUNT(user_id) AS user_count
-    FROM city_user
-    WHERE city_id = $1
-    GROUP BY city_id;
-  `;
-  const values = [city_id];
-  return db.query(queryString, values)
-    .then(res => res.rows[0]);
-};
+
 
 // Get how much collected points in each month
 const howMuchPoint = (city_id, current_month) => { 
@@ -65,4 +52,4 @@ const topThreeCities = (month) => {
 
 
 
-module.exports = { getAll, howManyUsers, howMuchPoint, topThreeCities };
+module.exports = { getAll, howMuchPoint, topThreeCities };

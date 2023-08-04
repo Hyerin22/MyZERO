@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import "../styles/components/DisplayPointTxt.scss";
 
 export default function DisplayPointTxt(props) {
+
+  const [state, setState] = useState({
+    id: 1,
+    total_point: 0
+  });
+  // When user login get the total point
+  useEffect(() => {
+    axios.get(`/api/usage/${state.id}/total-point`)
+      .then((res) => {
+        const tp = res.data.total_point;
+        setState(prev => ({ ...prev, total_point:tp }));
+      })
+      .catch(err => {
+        console.error("connect error:", err.message);
+      });
+  }, []);
+  // console.log("did you get the data?",state.total_point);
+
+
   const {
     text = "You have",
-    point = "000",
+    point = state.total_point,
     color = "#1d1d1d",
     size,
     pointSize,
