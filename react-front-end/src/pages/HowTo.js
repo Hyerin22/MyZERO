@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../styles/HowTo.scss";
 
@@ -8,28 +8,26 @@ import RatingProfile from "../components/RatingProfile";
 import Profile from "../components/Profile";
 import Footer from "../components/Footer";
 import DisplayPointTxt from "../components/DisplayPointTxt";
+import Sidebar from "../components/Sidebar";
 
 // images
 import ratingSecond from "../img/rating-second.png";
 import vancSymbol from "../img/vancouver-symbol.jpeg";
+import HamburgerNav from "../components/HamburgerNav";
 
 export default function HowTo() {
+  // for Hamburger menu
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="home-container">
       {/* Sidebar */}
-      <div className="sidebar">
-        <div className="sidebar-top">
-          <RatingProfile ratingImage={ratingSecond} />
-          <Profile symbol={vancSymbol} />
-        </div>
-        <div className="nav">
-          <Nav />
-        </div>
-        <div className="footer">
-          <Footer />
-        </div>
-      </div>
+      <Sidebar />
       {/* Right side main content */}
+      <HamburgerNav isOpen={isOpen} onClick={toggleMenu} />
       <div className="howto-main">
         <div className="howto-content">
           <div className="howto-steps">
