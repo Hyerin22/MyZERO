@@ -12,45 +12,39 @@ import vancouver from "../img/vancouver.jpeg";
 
 export default function CommTabCities() {
   const [state, setState] = useState({
-    data:{},
-    cities: {},
-    numberOfUser: 0
+    cities: [],
   });
 
-  // Counting city's users
   useEffect(() => {
-    //get city info
-    axios.get(`/api/cities`)
-      .then((res) => {
-        setState(prev => ({
-          ...prev,
-          cities: res.data
-        }));
-      })
-      .catch(err => {
-        console.error("connect error:", err.message);
-      });
-
-      // get city_user's info
-      axios.get(`/api/city-user`)
-      .then((res) => {
-        // Combine city_user data with cities data
-        const updatedCities = state.cities.map(city => ({
-          ...city,
-          city_user: res.data.find(user => user.city_id === city.id),
-        }));
-        console.log("updatedCities", updatedCities);
+    const fetchData = async () => {
+      try {
+        // Get city info
+        const cityRes = await axios.get(`/api/cities`);
+        const citiesData = cityRes.data;
+    
+        // Get city_user's info
+        const cityUserRes = await axios.get(`/api/city-user`);
+        const cityUserdata = cityUserRes.data;
   
-        // Update state with the combined data
+        // Combine city_user data with cities data
+        const updatedCities = citiesData.map(city => ({
+          ...city,
+          city_user: cityUserdata.find(user => user.city_id === city.id),
+        }));
+  
         setState(prev => ({
           ...prev,
           cities: updatedCities,
         }));
-      })
-      .catch(err => {
-        console.error("connect error:", err.message);
-      });
+  
+      } catch (error) {
+        console.error("connect error:", error.message);
+      }
+    };
+  
+    fetchData();
   }, []);
+  
 
   return (
     <div className="community-cont">
@@ -61,7 +55,7 @@ export default function CommTabCities() {
             id={city.id}
             cityName={city.name}
             cityImg={city.photo}
-            joinedPeople="00"
+            joinedPeople={city.city_user?.user_count}
           />
         ))}
     </div>
