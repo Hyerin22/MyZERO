@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 // styles
 import "../styles/Home.scss";
@@ -25,11 +26,29 @@ export default function Home() {
   const tabTypes = ["MyZERO", "Community", "Setting"];
   const [activeTab, setActiveTab] = useState(tabTypes[0]);
 
+  const [state, setState] = useState({
+    id: 1,
+    total_point: 0
+  });
+
   const tabPages = {
     MyZERO: HomeMyZERO,
     Community: CommTabCities,
     Setting: SettingTab,
   };
+
+  // When user login get the total point
+  useEffect(() => {
+    axios.get(`/api/usage/${state.id}/total-point`)
+      .then((res) => {
+        const tp = res.data.total_point;
+        setState(prev => ({ ...prev, total_point:tp }));
+      })
+      .catch(err => {
+        console.error("connect error:", err.message);
+      });
+  }, []);
+  // console.log("did you get the data?",state.total_point);
 
   return (
     <div className="home-container">
@@ -52,7 +71,7 @@ export default function Home() {
         <div className="home-top">
           <DisplayPointTxt
             size="26px"
-            point="1,403"
+            point={state.total_point}
             color="#1d828e"
             pointSize="76px"
             pointMargin="0px 7px"
