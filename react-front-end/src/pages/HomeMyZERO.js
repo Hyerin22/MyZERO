@@ -79,13 +79,14 @@ export default function HomeMyZERO() {
       .then((res) => {
 
 
+        console.log('res.data', res.data);
 
         // Convert numeric month to English name
         const formattedData = res.data.map((item) => ({
           month: getMonthName(item.month),
           month_points: item.month_points,
         }));
-        console.log("getMonthName", formattedData);
+        // console.log("getMonthName", formattedData);
         const three_month = formattedData[0];
         const two_month = formattedData[1];
         const one_month = formattedData[2];
@@ -110,7 +111,7 @@ export default function HomeMyZERO() {
     state.one_month.month,
     state.this_month.month
   ];
-  
+
   const points = [
     state.three_month.month_points,
     state.two_month.month_points,
@@ -130,7 +131,7 @@ export default function HomeMyZERO() {
       },
     ],
   };
-  console.log('data', data)
+        console.log('state', state);
 
 
   return (
