@@ -23,7 +23,7 @@ export default function MyBuyInfo() {
             <div className="MBInfo-history" key={history.id}>
               <p>{history.date}</p>
               <p>{history.brandName}</p>
-              <p>{history.deductedPoints} pt</p>
+              <p>-{history.deductedPoints} pt</p>
               <p>{history.remainingPoints} pt</p>
             </div>
           ))}
