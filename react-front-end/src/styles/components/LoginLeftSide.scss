@@ -6,10 +6,17 @@
   flex-direction: column;
   background-color: $secondBgColor;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
   p {
     text-align: center;
+  }
+
+  .left-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
   }
 
   .welcome {
@@ -25,6 +32,31 @@
   .left-mid {
     p {
       font-size: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .left-side {
+    flex: 1;
+
+    .left-top {
+      margin-bottom: 0px;
+
+      div {
+        margin-top: 60px;
+      }
+      p {
+        display: none;
+      }
+    }
+
+    .left-mid {
+      margin-bottom: 60px;
+
+      p {
+        font-size: 18px;
+      }
     }
   }
 }

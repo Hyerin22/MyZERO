@@ -14,3 +14,12 @@
     justify-content: center;
   }
 }
+@media only screen and (max-width: 600px) {
+  .login-cont {
+    flex-direction: column;
+
+    .right-side {
+      flex: 2;
+    }
+  }
+}
