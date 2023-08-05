@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { plantLevel, getCitySymbol, currentMonth } from '../hooks/pointsUtils';
+import { plantLevel, getCitySymbol, currentMonth } from '../provider/pointsUtils';
 
 
 //styles
@@ -14,12 +14,9 @@ import Footer from "../components/Footer";
 
 
 export default function Sidebar() {
-  // Get stored user data
-  const storedUser = sessionStorage.getItem('user');
-  const currentUser = storedUser ? JSON.parse(storedUser).id : 0;
 
   const [state, setState] = useState({
-    user: { id: currentUser },
+    user: { id: 1 },
     this_month: {},
   });
 
@@ -57,15 +54,6 @@ export default function Sidebar() {
       });
   }, []);
 
-  // logout 
-  const logout = () => {
-    axios.post('/api/logout')
-      .then(() => {
-        sessionStorage.clear();
-        // setUser(null);
-      });
-  };
-
 
   return (
     <div className="sidebar">
@@ -74,7 +62,7 @@ export default function Sidebar() {
         <Profile user={state.user} />
       </div>
       <div className="nav">
-        <Nav logout={logout} />
+        <Nav />
       </div>
       <div className="footer">
         <Footer />

@@ -26,7 +26,20 @@ INSERT INTO users (first_name, last_name, city_id, email, password_digest) VALUE
   ('Wei', 'Liu', 4,'wei.liu@example.com', 'pwd123'),
   ('Rina', 'Takahashi', 2,'rina.takahashi@example.com', 'pwd123'),
   ('Aarav', 'Sharma', 3,'aarav.sharma@example.com', 'pwd123'),
-  ('Mei', 'Wong', 6,'mei.wong@example.com', 'pwd123');
+  ('Mei', 'Wong', 6,'mei.wong@example.com', 'pwd123'),
+  ('Grace', 'Kim', 5,'Grace.Kim@example.com', 'pwd123'),
+  ('Ethan', 'Smith', 1,'Ethan.Smith@example.com', 'pwd123'),
+  ('Sophia', 'Johnson', 4,'Sophia.Johnson@example.com', 'pwd123'),
+  ('William', 'Williams', 2,'William.Williams@example.com', 'pwd123'),
+  ('Mia', 'Davis', 3,'Mia.Davis@example.com', 'pwd123'),
+  ('James', 'Brown', 6,'James.Brown@example.com', 'pwd123'),
+  ('Lola', 'Luise', 2,'Lola.Davis@example.com', 'pwd123'),
+  ('Takahasi', 'aya', 5,'Takahasi.Brown@example.com', 'pwd123'),
+  ('John', 'Doe', 2, 'john.doe@example.com', 'pwd123'),
+  ('Jane', 'Smith', 2, 'jane.smith@example.com', 'pwd123'),
+  ('David', 'Lee', 2, 'david.lee@example.com', 'pwd123'),
+  ('Sarah', 'Johnson', 2, 'sarah.johnson@example.com', 'pwd123');
+ 
 
 -- city user
 INSERT INTO city_user (user_id, city_id) VALUES
@@ -47,7 +60,19 @@ INSERT INTO city_user (user_id, city_id) VALUES
   (15, 4),
   (16, 2),
   (17, 3),
-  (18, 6);
+  (18, 6),
+  (19, 5),
+  (20, 1),
+  (21, 4),
+  (22, 2),
+  (23, 3),
+  (24, 6),
+  (25, 2),
+  (26, 5),
+  (27, 2),
+  (28, 2),
+  (29, 2),
+  (30, 2);
 
 -- points
 INSERT INTO points (user_id, city_id, point, date) VALUES
@@ -88,7 +113,21 @@ INSERT INTO points (user_id, city_id, point, date) VALUES
   (1, 1, 20, '2023-06-02T07:00:00.000Z'),
   (2, 2, 5, '2023-06-02T07:00:00.000Z'),
   (1, 1, 20, '2023-07-02T07:00:00.000Z'),
-  (2, 2, 5, '2023-07-02T07:00:00.000Z');
+  (2, 2, 5, '2023-07-02T07:00:00.000Z'),
+  (19, 5, 20, '2023-08-02T07:00:00.000Z' ),
+  (20, 1, 5, '2023-08-02T07:00:00.000Z'),
+  (21, 4, 20, '2023-08-02T07:00:00.000Z' ),
+  (22, 2, 5, '2023-08-02T07:00:00.000Z'),
+  (23, 3, 20, '2023-08-02T07:00:00.000Z' ),
+  (24, 6, 5, '2023-08-02T07:00:00.000Z'),
+  (25, 1, 20, '2023-07-02T07:00:00.000Z'),
+  (26, 2, 5, '2023-07-02T07:00:00.000Z'),
+  (27, 2, 20, '2023-08-02T07:00:00.000Z' ),
+  (28, 5, 5, '2023-08-02T07:00:00.000Z'),
+  (29, 2, 20, '2023-08-02T07:00:00.000Z' ),
+  (30, 2, 5, '2023-08-02T07:00:00.000Z'),
+  (30, 2, 20, '2023-08-02T07:00:00.000Z' ),
+  (27, 2, 5, '2023-08-02T07:00:00.000Z');
 
 -- products
 INSERT INTO products (name, point, store, description, photo) VALUES
@@ -116,6 +155,7 @@ INSERT INTO usage (user_id, product_id, point_id, date) VALUES
   (1, NULL, 33, '2023-05-02T07:00:00.000Z'),
   (1, NULL, 35, '2023-06-02T07:00:00.000Z'),
   (1, NULL, 37, '2023-07-02T07:00:00.000Z'),
+  (1, NULL, 40, '2023-08-02T07:00:00.000Z'),
   (1, 1, NULL, '2023-08-02T07:00:00.000Z'),
   (2, NULL, 2, '2023-08-02T07:00:00.000Z'),
   (2, NULL, 20, '2023-08-02T07:00:00.000Z'),
@@ -128,4 +168,5 @@ INSERT INTO usage (user_id, product_id, point_id, date) VALUES
   (2, NULL, 34, '2023-05-02T07:00:00.000Z'),
   (2, NULL, 36, '2023-06-02T07:00:00.000Z'),
   (2, NULL, 38, '2023-07-02T07:00:00.000Z'),
+  (2, NULL, 42, '2023-07-02T07:00:00.000Z'),
   (2, 6, NULL, '2023-08-02T07:00:00.000Z');
