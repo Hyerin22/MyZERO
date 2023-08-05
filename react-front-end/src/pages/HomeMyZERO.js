@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 import { getMonthName } from '../provider/pointsUtils';
+
 
 import {
   Chart as ChartJS,
@@ -31,6 +33,7 @@ export const options = {
 
 export default function HomeMyZERO() {
 
+
   const [state, setState] = useState({
     id: 1,
     three_month: {},
@@ -55,13 +58,11 @@ export default function HomeMyZERO() {
     setSelectedMonths(recentMonths);
   }, [currentMonth]);
 
-
   // Points collected this month
   useEffect(() => {
     axios
       .get(`/api/points/${state.id}/month?months=${selectedMonths.join(",")}`)
       .then((res) => {
-
         // Convert numeric month to English name
         const formattedData = res.data.map((item) => ({
           month: getMonthName(item.month),
@@ -93,14 +94,14 @@ export default function HomeMyZERO() {
     state.three_month?.month,
     state.two_month?.month,
     state.one_month?.month,
-    state.this_month?.month
+    state.this_month?.month,
   ];
 
   const points = [
     state.three_month?.month_points,
     state.two_month?.month_points,
     state.one_month?.month_points,
-    state.this_month?.month_points
+    state.this_month?.month_points,
   ];
 
   const data = {
