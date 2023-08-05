@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { plantLevel, currentMonth } from '../provider/pointsUtils';
+import { plantLevel, currentMonth } from "../provider/pointsUtils";
+import { useNavigate } from "react-router-dom";
 
 // styles
 import "../styles/components/SettingTab.scss";
@@ -13,36 +14,36 @@ import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-
 export default function SettingTab() {
   const [selectedCity, setSelectedCity] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const [state, setState] = useState({
     cities: [],
-    user: {id:1},
-    this_month:{},
+    user: { id: 1 },
+    this_month: {},
   });
 
   const cityNames = {
-    1: 'Vancouver',
-    2: 'Burnaby',
+    1: "Vancouver",
+    2: "Burnaby",
     3: "North Vancouver",
     4: "Coquitlam",
     5: "Richmond",
-    6: "Langley"
+    6: "Langley",
   };
 
   //get user info
   useEffect(() => {
-    axios.get(`/api/users/${state.user.id}`)
+    axios
+      .get(`/api/users/${state.user.id}`)
       .then((res) => {
-        setState(prev => ({
+        setState((prev) => ({
           ...prev,
-          user: res.data
+          user: res.data,
         }));
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("connect error:", err.message);
       });
   }, []);
@@ -52,7 +53,6 @@ export default function SettingTab() {
     axios
       .get(`/api/points/${state.user.id}/month?months=${currentMonth}`)
       .then((res) => {
-        
         const this_month = res.data[3].month_points;
 
         setState((prev) => ({
@@ -67,14 +67,15 @@ export default function SettingTab() {
 
   //get city name and id
   useEffect(() => {
-    axios.get(`/api/cities`)
+    axios
+      .get(`/api/cities`)
       .then((res) => {
-        setState(prev => ({
+        setState((prev) => ({
           ...prev,
-          cities: res.data
+          cities: res.data,
         }));
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("connect error:", err.message);
       });
   }, []);
@@ -87,9 +88,18 @@ export default function SettingTab() {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate("/");
+  };
+
   return (
     <div className="setting-cont">
-      <RatingProfile ratingImage={plantLevel(state.this_month)} margin="0 0 30px 0" />
+      <RatingProfile
+        ratingImage={plantLevel(state.this_month)}
+        margin="0 0 30px 0"
+      />
       <div className="input name">
         <label>Name</label>
         <br />
@@ -146,6 +156,7 @@ export default function SettingTab() {
           radius="20px"
           color="#1d828e"
           margin="0 25px 0 0"
+          onclick={goToLogin}
         />
         <Button
           title="Save"

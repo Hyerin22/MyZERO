@@ -13,15 +13,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function LoginInput(props) {
-
-  const navigate = useNavigate();
-
-  const handleSubmit = (event) => {
-    // event.preventDefault();
-    // props.onClickFunc( email, password );
-    navigate('/MyZero');
-  };
-
   return (
     <div className="loginInput-cont">
       <div className="input-top">
@@ -36,25 +27,19 @@ export default function LoginInput(props) {
         <p>{props.title}</p>
       </div>
       <form className="inputs">
-        <input
-          type="email"
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          placeholder="PW"
-        />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="PW" />
       </form>
       <div className="buttons">
         <Button
-          title="Login"
+          title={props.bttnTitle}
           border="none"
           bgColor="#1d828e"
           radius="30px"
           color="white"
           margin="0 0 0 0"
           width="335px"
-          onSubmit={handleSubmit()}
+          onclick={props.onclick}
         />
 
         <div
