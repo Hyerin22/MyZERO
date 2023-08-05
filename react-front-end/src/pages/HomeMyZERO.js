@@ -30,8 +30,12 @@ export const options = {
 };
 
 export default function HomeMyZERO() {
+  // Get stored user data
+  const storedUser = sessionStorage.getItem('user');
+  const currentUser = storedUser ? JSON.parse(storedUser).id : 0;
+
   const [state, setState] = useState({
-    id: 1,
+    id: currentUser,
     three_month: {},
     two_month: {},
     one_month: {},
