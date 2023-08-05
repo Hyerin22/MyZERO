@@ -12,9 +12,6 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 // components
 import DisplayPointTxt from "./DisplayPointTxt";
-// import TabGroup from "./TabGroup";
-// import CityTop10 from "./CityTop10";
-// import CityPrev from "./CityPrev";
 
 // get user's this month point
 const getUserPoints = async (user, currentMonth) => {
@@ -33,15 +30,12 @@ const getUserPoints = async (user, currentMonth) => {
 
 export default function CityInfo() {
   // for data
-  // const [city, setCity] = useState(null);
   const { id } = useParams();
   const [state, setState] = useState({
     users: [],
     point: 0,
   });
-  // console.log("state.point", state.point);
-
-
+ 
   // Get city_user's info
   // Get user info
   // Combine city_user data with user data
@@ -116,7 +110,6 @@ export default function CityInfo() {
   };
 
   useEffect(() => {
-    // getData();
     calculateCountdown();
 
     // Update the countdown every second
@@ -183,18 +176,6 @@ export default function CityInfo() {
                   </div>
                 ))}
             </div>
-            {/* <TabGroup
-              types={tabTypes}
-              tabPages={tabPages}
-              marginL="10px"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-              boxBgColor="#F8F8F8"
-              boxWidth="850px"
-              boxHeight="300px"
-              tabMarginR="100px"
-              boxPadding="35px 130px"
-            /> */}
           </div>
         </div>
       )}
