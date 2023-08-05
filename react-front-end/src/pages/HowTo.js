@@ -11,8 +11,6 @@ import DisplayPointTxt from "../components/DisplayPointTxt";
 import Sidebar from "../components/Sidebar";
 
 // images
-import ratingSecond from "../img/rating-second.png";
-import vancSymbol from "../img/vancouver-symbol.jpeg";
 import HamburgerNav from "../components/HamburgerNav";
 
 export default function HowTo() {
