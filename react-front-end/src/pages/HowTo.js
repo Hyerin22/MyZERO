@@ -11,10 +11,6 @@ import DisplayPointTxt from "../components/DisplayPointTxt";
 import Sidebar from "../components/Sidebar";
 import HamburgerNav from "../components/HamburgerNav";
 
-// images
-import ratingSecond from "../img/rating-second.png";
-import vancSymbol from "../img/vancouver-symbol.jpeg";
-
 export default function HowTo() {
   // for Hamburger menu
   const [isOpen, setIsOpen] = useState(false);

@@ -7,16 +7,18 @@ import "../styles/Login.scss";
 import LoginLeftSide from "../components/LoginLeftSide";
 import LoginInput from "../components/LoginInput";
 
-export default function Login() {
+export default function Login(props) {
+  const handleSubmit = (email, password) => {
+    props.login(email, password); 
+  };
   return (
     <div className="login-cont">
       <LoginLeftSide />
       <div className="right-side">
-        <LoginInput
+        <LoginInput 
           title="Login"
           backBttnDisplay="none"
-          // backend: click -> match the user info and route to MyZERO
-          // onClickFunc=""
+          onClickFunc={handleSubmit}
         />
       </div>
     </div>

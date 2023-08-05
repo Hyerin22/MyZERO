@@ -20,6 +20,7 @@ app.get('/api/data', (req, res) => res.json({
 }));
 
 
+const { findUserByEmail, isValidPassword } = require('./db/queries/login');
 const userRoutes = require('./routes/api-users');
 const usageRoutes = require('./routes/api-usage');
 const citiesRoutes = require('./routes/api-cities');
@@ -35,17 +36,23 @@ app.use("/api/points", pointRoutes);
 app.use("/api/products", productRoutes);
 
 
-app.post('/api/login', (req, res) => {
-  const user = { id: 1 };
-  req.session.user = user;
-  console.log(req.session)
-  res.json(user);
-});
 
-app.post('/api/login/1', (req, res) => {
-  const user = { id: 2 };
-  req.session.user = user;
-  res.json(user);
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+  const user = findUserByEmail(email);
+
+  console.log("password", password);
+  if (user && isValidPassword(user, password)) {
+
+    // Set the cookie with the user's ID
+    res.cookie('user_id', user.id);
+    console.log("server.js res.data", res.data);
+
+    // Respond with a success message or redirect the user to a dashboard page
+    res.json({ userId: user.id, message: 'Login Successful!!' });
+  } else {
+    res.status(401).json({ message: 'Invalid credentials' });
+  }
 });
 
 app.post('/api/logout', (req, res) => {

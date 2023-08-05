@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import { useParams, useNavigate } from "react-router-dom";
+import { currentMonth } from '../hooks/pointsUtils';
 
 // styles
 import "../styles/components/CityInfo.scss";
@@ -10,29 +12,81 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 // components
 import DisplayPointTxt from "./DisplayPointTxt";
-import TabGroup from "./TabGroup";
-import CityTop10 from "./CityTop10";
-import CityPrev from "./CityPrev";
 
-// data
-import { fakeTop10 } from "../mockdata/fakeData";
+// get user's this month point
+const getUserPoints = async (user, currentMonth) => {
+  try {
+    const pointRes = await axios.get(`/api/points/${user.id}/month?months=${currentMonth}`);
+    const userPoint = pointRes.data;
+    const this_month = userPoint.find(item => item.month === currentMonth)?.month_points;
+
+    return { ...user, this_month };
+  } catch (error) {
+    console.error("Error fetching user points:", error.message);
+    return user;
+  }
+};
 
 export default function CityInfo() {
   // for data
-  // const [data, setData] = useState([]);
-  const [city, setCity] = useState(null);
-
   const { id } = useParams();
-  const getData = async () => {
-    const response = await fetch(
-      `https://jsonplaceholder.typicode.com/users?id=${id}`
-    );
-    const jsonData = await response.json();
-    // setData(jsonData);
-    if (jsonData.length > 0) {
-      setCity(jsonData[0]);
-    }
-  };
+  const [state, setState] = useState({
+    users: [],
+    point: 0,
+  });
+ 
+  // Get city_user's info
+  // Get user info
+  // Combine city_user data with user data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const cityUserRes = await axios.get(`/api/city-user/${id}`);
+        const cityUserdata = cityUserRes.data;
+
+        const userRes = await axios.get(`/api/users`);
+        const usersData = userRes.data;
+
+        const matchedUsers = usersData.filter(user => {
+          return cityUserdata.some(cityUser => cityUser.user_id === user.id);
+        });
+
+        const getUsersPoints = async () => {
+          const usersWithPoints = await Promise.all(matchedUsers.map(user => getUserPoints(user, currentMonth)));
+
+          usersWithPoints.sort((a, b) => b.this_month - a.this_month);
+          setState(prev => ({
+            ...prev,
+            users: usersWithPoints,
+          }));
+        };
+
+        getUsersPoints();
+
+
+      } catch (error) {
+        console.error("connect error:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Get city collected points a month
+  useEffect(() => {
+    axios.get(`/api/cities/${id}/point`)
+      .then((res) => {
+        setState(prev => ({
+          ...prev,
+          point: res.data
+        }));
+      })
+      .catch(err => {
+        console.error("connect error:", err.message);
+      });
+  }, []);
+
+
 
   // for D-day
   const [countdown, setCountdown] = useState(0);
@@ -55,26 +109,17 @@ export default function CityInfo() {
   };
 
   useEffect(() => {
-    getData();
     calculateCountdown();
 
     // Update the countdown every second
     const interval = setInterval(() => {
       calculateCountdown();
-    }, 1000);
+    }, 86400);
 
     // Clean up the interval on unmount
     return () => clearInterval(interval);
   }, []);
 
-  // for the tab menu
-  // const tabTypes = ["Top10", "Prev"];
-  // const [activeTab, setActiveTab] = useState(tabTypes[0]);
-
-  // const tabPages = {
-  //   Top10: CityTop10,
-  //   Prev: CityPrev,
-  // };
 
   const navigate = useNavigate();
 
@@ -82,24 +127,25 @@ export default function CityInfo() {
 
   return (
     <div className="cityinfo-cont">
-      {city && (
+      {state && (
         <div>
-          <div className="city-top" key={city.id}>
-            <div className="city-name">
-              <FontAwesomeIcon
-                icon={faChevronLeft}
-                size="lg"
+          <div className="city-top" key={id}>
+            <div className="city-name" 
                 onClick={() => {
                   navigate(-1);
                 }}
+            >
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                size="lg"
               />
-              <p>{city.address.city}</p>
+              <p>{state.point[0]?.city_name}</p>
             </div>
             <div className="city-info">
               <DisplayPointTxt
                 text=""
+                point={state.point[0]?.total_points}
                 size="26px"
-                point="453"
                 color="#1d828e"
                 pointSize="76px"
                 pointMargin="0px 7px"
@@ -121,30 +167,18 @@ export default function CityInfo() {
                 <p>3rd</p>
               </div>
               <div className="cityInfo-user-cont">
-                {sortedTop10.length > 0 &&
-                  sortedTop10.map((user) => (
-                    <div className="cityInfo-user" key={user.id}>
-                      <p>
-                        {user.username.slice(0, 3) +
-                          "*".repeat(user.username.length - 3)}
-                      </p>
-                      <p>{user.points} pt</p>
-                    </div>
-                  ))}
+                {state.users.length > 0 &&
+                state.users.map((user) => (
+                  <div className="cityInfo-user" key={user.id}>
+                    <p>
+                      {user.email.slice(0, 3) +
+                        "*".repeat(user.email.length - 3)}
+                    </p>
+                    <p>{user?.this_month} pt</p>
+                  </div>
+                ))}
               </div>
             </div>
-            {/* <TabGroup
-              types={tabTypes}
-              tabPages={tabPages}
-              marginL="10px"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-              boxBgColor="#F8F8F8"
-              boxWidth="850px"
-              boxHeight="300px"
-              tabMarginR="100px"
-              boxPadding="35px 130px"
-            /> */}
           </div>
         </div>
       )}
