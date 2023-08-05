@@ -15,6 +15,7 @@ import Sidebar from "../components/Sidebar";
 import CommTabCities from "../components/CommTabCities";
 import HomeMyZERO from "./HomeMyZERO";
 import SettingTab from "../components/SettingTab";
+import HamburgerNav from "../components/HamburgerNav";
 
 export default function Setting() {
   // for the tab menu
@@ -27,11 +28,18 @@ export default function Setting() {
     Setting: SettingTab,
   };
 
+  // for Hamburger menu
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="home-container">
       {/* Sidebar */}
       <Sidebar />
       {/* Right side main content */}
+      <HamburgerNav isOpen={isOpen} onClick={toggleMenu} />
       <div className="home-main">
         <div className="home-top">
           <DisplayPointTxt

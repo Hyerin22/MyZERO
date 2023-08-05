@@ -10,7 +10,7 @@ INSERT INTO cities (name, photo, symbol) VALUES
 -- users
 INSERT INTO users (first_name, last_name, city_id, email, password_digest) VALUES
   ('Tehi', 'Kim', 1, 'tehi@example.com', 'pwd123'),
-  ('Hyelyn', 'Cheon', 2, 'hlyn@example.com', 'pwd123'),
+  ('Hyerin', 'Cheon', 2, 'hlyn@example.com', 'pwd123'),
   ('Michael', 'Johnson', 2, 'michael@example.com', 'pwd123'),
   ('Alice', 'Williams', 4, 'alice@example.com', 'pwd123'),
   ('Robert', 'Brown', 5, 'robert@example.com', 'pwd123'),

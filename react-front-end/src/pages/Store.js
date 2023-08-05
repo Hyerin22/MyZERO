@@ -9,6 +9,7 @@ import TabGroup from "../components/TabGroup";
 import Sidebar from "../components/Sidebar";
 import Reward from "./Reward";
 import MyBuyInfo from "../components/MyBuyInfo";
+import HamburgerNav from "../components/HamburgerNav";
 
 export default function Store() {
   // for the tab menu
@@ -20,9 +21,16 @@ export default function Store() {
     MyBuy: MyBuyInfo,
   };
 
+  // for Hamburger menu
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="home-container">
       <Sidebar />
+      <HamburgerNav isOpen={isOpen} onClick={toggleMenu} />
       <div className="home-main">
         <div className="home-top">
           <DisplayPointTxt

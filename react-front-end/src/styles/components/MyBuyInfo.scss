@@ -18,36 +18,34 @@
       border-radius: 18px 18px 0px 0px;
       border: none;
       padding: 10px 30px;
-      margin-left: 35px;
+      margin-left: 10%;
     }
   }
 
   .MBInfo-content-box {
-    width: 850px;
+    // width: 850px;
+    width: 50vw;
     margin: 0 auto;
     height: auto;
     background-color: $secondBgColor;
     box-shadow: 2px 2px 25px 0px rgba(0, 0, 0, 0.15);
     padding: 35px;
     border-radius: 18px;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // grid-template-rows: repeat(8, 1fr);
     display: flex;
     flex-wrap: wrap;
 
     .MBInfo-history {
       display: flex;
       border-bottom: solid 1px rgba(29, 29, 29, 0.3);
-      // margin-top: 20px;
-      margin-right: 40px;
-      // margin-bottom: 20px;
+      text-align: center;
       align-items: center;
-      width: 50%;
+      // width: 50%;
+      width: 50vw;
+      padding-bottom: 5px;
 
       p {
         font-weight: 400;
-        margin: 10px 45px 10px 0;
+        margin: 10px 0px 0px 0px;
         flex: 1;
         // margin: 0;
       }
@@ -62,6 +60,76 @@
     p {
       font-family: $pointFont;
       font-size: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .MyBuyInfo-cont {
+    .MBInfo-tab-container {
+      .MBInfo-tab {
+        padding: 5px 10px;
+        font-size: 10px;
+        border-radius: 8px 8px 0 0;
+      }
+    }
+    .MBInfo-content-box {
+      padding: 10px 15px;
+
+      .MBInfo-history {
+        margin: 10px 0;
+
+        p {
+          font-size: 12px;
+          margin: 0;
+        }
+      }
+    }
+
+    .MBInfo-products {
+      grid-template-columns: 1fr;
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .MyBuyInfo-cont {
+    .MBInfo-tab-container {
+      .MBInfo-tab {
+        font-size: 12px;
+      }
+    }
+
+    .MBInfo-content-box {
+      .MBInfo-history {
+        p {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .MBInfo-products {
+      grid-template-columns: 1fr 1fr;
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .MyBuyInfo-cont {
+    .MBInfo-products {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      p {
+        font-size: 20px;
+      }
     }
   }
 }

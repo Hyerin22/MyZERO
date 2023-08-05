@@ -1,8 +1,6 @@
-// for backend
-// save button
-// import the user's data -> when they click setting, their info should be displayed
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { plantLevel, currentMonth } from '../hooks/pointsUtils';
 
 // styles
 import "../styles/components/SettingTab.scss";
@@ -11,33 +9,75 @@ import "../styles/components/SettingTab.scss";
 import RatingProfile from "./RatingProfile";
 import Button from "./Button";
 
-// images
-import ratingSecond from "../img/rating-second.png";
-
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-// fake data
-const cityNames = [
-  "Burnaby",
-  "Coquitlam",
-  "Langley",
-  "North Vancouver",
-  "Richmond",
-  "Vancouver",
-];
-
-const fakeUser = {
-  name: "John Doe",
-  email: "john.doe@example.com",
-  password: "fakepassword123",
-  location: "Burnaby",
-};
 
 export default function SettingTab() {
   const [selectedCity, setSelectedCity] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const [state, setState] = useState({
+    cities: [],
+    user: {id:1},
+    this_month:{},
+  });
+
+  const cityNames = {
+    1: 'Vancouver',
+    2: 'Burnaby',
+    3: "North Vancouver",
+    4: "Coquitlam",
+    5: "Richmond",
+    6: "Langley"
+  };
+
+  //get user info
+  useEffect(() => {
+    axios.get(`/api/users/${state.user.id}`)
+      .then((res) => {
+        setState(prev => ({
+          ...prev,
+          user: res.data
+        }));
+      })
+      .catch(err => {
+        console.error("connect error:", err.message);
+      });
+  }, []);
+
+  // get user's this month point
+  useEffect(() => {
+    axios
+      .get(`/api/points/${state.user.id}/month?months=${currentMonth}`)
+      .then((res) => {
+        
+        const this_month = res.data[3].month_points;
+
+        setState((prev) => ({
+          ...prev,
+          this_month,
+        }));
+      })
+      .catch((err) => {
+        console.error("connect error:", err.message);
+      });
+  }, []);
+
+  //get city name and id
+  useEffect(() => {
+    axios.get(`/api/cities`)
+      .then((res) => {
+        setState(prev => ({
+          ...prev,
+          cities: res.data
+        }));
+      })
+      .catch(err => {
+        console.error("connect error:", err.message);
+      });
+  }, []);
 
   const handleCityChange = (event) => {
     setSelectedCity(event.target.value);
@@ -49,17 +89,18 @@ export default function SettingTab() {
 
   return (
     <div className="setting-cont">
-      <RatingProfile ratingImage={ratingSecond} margin="0 0 30px 0" />
+      <RatingProfile ratingImage={plantLevel(state.this_month)} margin="0 0 30px 0" />
       <div className="input name">
         <label>Name</label>
         <br />
-        <input type="text" defaultValue={fakeUser.name} />
+        <input type="text" defaultValue={state.user.first_name} />
+        <input type="text" defaultValue={state.user.last_name} />
         <br />
       </div>
       <div className="input email">
         <label>Email</label>
         <br />
-        <input type="email" defaultValue={fakeUser.email} />
+        <input type="email" defaultValue={state.user.email} />
         <br />
       </div>
       <div className="input">
@@ -68,10 +109,11 @@ export default function SettingTab() {
         <div className="pw">
           <input
             type={showPassword ? "text" : "password"}
-            defaultValue={fakeUser.password}
-            style={{
-              fontSize: showPassword ? "20px" : "30px",
-            }}
+            defaultValue={state.user.password_digest}
+            // style={{
+            //   fontSize: showPassword ? "20px" : "30px",
+            // }}
+            className={showPassword ? "pw-text" : "pw-pw"}
           />
           <FontAwesomeIcon
             icon={showPassword ? faEye : faEyeSlash}
@@ -85,13 +127,13 @@ export default function SettingTab() {
         <select
           id="cityDropdown"
           // defaultValue={fakeUser.location}
-          value={selectedCity}
+          defaultValuevalue={selectedCity}
           onChange={handleCityChange}
         >
-          <option value="">{fakeUser.location}</option>
-          {cityNames.map((cityName) => (
-            <option key={cityName} value={cityName}>
-              {cityName}
+          <option value="">Current: {cityNames[state.user.city_id]}</option>
+          {state.cities.map((city) => (
+            <option key={city.id} value={city.id}>
+              {city.name}
             </option>
           ))}
         </select>

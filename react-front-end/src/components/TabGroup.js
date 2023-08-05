@@ -14,8 +14,10 @@ export default function TabGroup({
   setActiveTab,
   padding = "14px 30px",
   boxPadding = "65px 70px",
-  boxWidth = "1059px",
-  boxHeight = "720px",
+  // boxWidth = "1059px",
+  // boxWidth = "100%",
+  boxWidth = "70vw",
+  boxHeight = "65vh",
   boxBgColor = "white",
   tabMarginR = "40px",
 }) {
