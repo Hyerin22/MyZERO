@@ -12,18 +12,18 @@ export default function CommTabCities() {
     cities: [],
   });
 
+  // Get city info
+  // Get city_user's info
+  // Combine city_user data with cities data
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Get city info
         const cityRes = await axios.get(`/api/cities`);
         const citiesData = cityRes.data;
     
-        // Get city_user's info
         const cityUserRes = await axios.get(`/api/city-user`);
         const cityUserdata = cityUserRes.data;
   
-        // Combine city_user data with cities data
         const updatedCities = citiesData.map(city => ({
           ...city,
           city_user: cityUserdata.find(user => user.city_id === city.id),
@@ -42,7 +42,6 @@ export default function CommTabCities() {
     fetchData();
   }, []);
   
-  console.log("씨티 피플", state);
 
   return (
     <div className="community-cont">

@@ -6,13 +6,6 @@ import third_level from "../img/level03.png";
 import forth_level from "../img/level04.png";
 import fifth_level from "../img/level05.png";
 
-// import vancouver from "http://localhost:8080/symbol/vancouver.jpg";
-// import burnaby from "http://localhost:8080/symbol/burnaby.jpg";
-// import northVan from "http://localhost:8080/symbol/northvan.jpg";
-// import coquitlam from "http://localhost:8080/symbol/coquitlam.jpg";
-// import richmond from "http://localhost:8080/symbol/richmond.jpg";
-// import langley from "http://localhost:8080/symbol/langley.jpg";
-
 
 export const plantLevel = (points) => {
   if (points >= 0 && points <= 4) {
