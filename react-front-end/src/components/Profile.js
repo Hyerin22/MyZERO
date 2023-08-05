@@ -1,18 +1,20 @@
 import React from "react";
 import "../styles/components/Profile.scss";
 
-export default function Profile({
-  username = "user",
-  location = "default-location",
-  symbol,
-}) {
+export default function Profile(props
+//   {
+//   username = "user",
+//   location = "default-location",
+//   symbol,
+// }
+) {
   return (
     <div className="profile-cont">
-      <p>Hi, {username}</p>
+      {/* <p>Hi, {props.user.first_name}</p> */}
       <div className="locations">
-        <p>{location}</p>
+        {/* <p>{props.user.city_id}</p> */}
         <div className="circle-cont">
-          <img src={symbol} alt="symbol" />
+          {/* <img src={props.symbol} alt="symbol" /> */}
         </div>
       </div>
     </div>

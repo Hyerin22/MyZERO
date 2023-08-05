@@ -5,7 +5,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import "../styles/components/HamburgerNav.scss";
 
 // images
-import ratingSecond from "../img/rating-second.png";
+import ratingSecond from "../img/level02.png";
 import vancSymbol from "../img/vancouver-symbol.jpeg";
 
 export default function HamburgerNav({
