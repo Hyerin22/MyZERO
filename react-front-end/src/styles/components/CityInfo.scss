@@ -2,6 +2,9 @@
 
 .cityinfo-cont {
   .city-top {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
     .city-name {
       display: flex;
       align-items: baseline;
@@ -12,14 +15,17 @@
       }
     }
     .city-info {
-      display: flex;
+      // display: flex;
+      // justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       margin-top: 50px;
 
       .dday {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-left: 240px;
+        // margin-left: 240px;
 
         p {
           font-size: 76px;
@@ -38,7 +44,123 @@
   .cityInfo-tab-cont {
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
     margin-top: 80px;
+
+    .cityInfo-tab-container {
+      display: flex;
+
+      .cityInfo-tab {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: $white;
+        background-color: $mainColor;
+        box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 18px 18px 0px 0px;
+        border: none;
+        padding: 10px 30px;
+        margin-left: 10%;
+      }
+    }
+
+    .cityInfo-content-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 90px;
+      position: relative;
+      background-color: $secondBgColor;
+      width: 55vw;
+      // padding: 45px;
+      // padding: 35px 130px;
+      padding: 35px 100px;
+      border-radius: 45px;
+      box-shadow: 2px 2px 25px 0px rgba(0, 0, 0, 0.15);
+      overflow: auto;
+      margin: 0 auto;
+      text-align: center;
+      box-sizing: border-box;
+
+      .ranking {
+        position: absolute;
+
+        p {
+          font-weight: 400;
+        }
+
+        p:nth-child(1) {
+          position: absolute;
+          top: 20px;
+          left: 55px;
+        }
+        p:nth-child(2) {
+          position: absolute;
+          top: 55px;
+          left: 55px;
+        }
+        p:nth-child(3) {
+          position: absolute;
+          top: 90px;
+          left: 55px;
+        }
+      }
+
+      .cityInfo-user {
+        border-bottom: solid 1px rgba(29, 29, 29, 0.3);
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        p {
+          font-weight: 400;
+          // margin: 10px 45px 10px 0;
+          flex: 1;
+          margin: 0;
+          padding-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .cityinfo-cont {
+    .city-top {
+      .city-name {
+        // display: flex;
+        // align-items: baseline;
+        p {
+          // font-family: $pointFont;
+          // font-size: 28px;
+          // margin: 0 0 0 10px;
+        }
+      }
+      .city-info {
+        // display: flex;
+        // margin-top: 50px;
+
+        .dday {
+          // display: flex;
+          // flex-direction: column;
+          // align-items: center;
+          // margin-left: 240px;
+          // margin-left: 100px;
+
+          p {
+            // font-size: 76px;
+            // color: $mainColor;
+            // font-family: $pointFont;
+            // margin: 0;
+          }
+
+          span {
+            // font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .cityInfo-tab-cont {
+    }
   }
 }
