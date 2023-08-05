@@ -60,7 +60,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .home-container {
     display: flex;
     flex-direction: column;
@@ -70,7 +70,10 @@
 
       .howto-content {
         width: 85%;
+        height: 60vh;
         padding: 40px 40px;
+        margin-top: 20px;
+
         .howto-title {
           font-size: 25px;
         }

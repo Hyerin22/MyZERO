@@ -5,7 +5,8 @@
   flex-direction: column;
   align-items: center;
   .prod-box {
-    height: auto;
+    height: 30vh;
+    // height: auto;
     border-radius: 18px;
     background: $white;
     box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.15);
@@ -43,6 +44,51 @@
     p {
       font-family: $pointFont;
       margin: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .prod-container {
+    .prod-box {
+      width: 160px !important;
+      height: 25vh;
+
+      div {
+        width: 160px !important;
+
+        p {
+          font-size: 24px !important;
+        }
+      }
+
+      .prod-name {
+        p {
+          font-size: 13px !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .prod-container {
+    .prod-box {
+      width: 170px !important;
+
+      div {
+        width: 170px !important;
+
+        p {
+          font-size: 24px !important;
+        }
+      }
+
+      .prod-name {
+        p {
+          font-size: 13px !important;
+        }
+      }
     }
   }
 }

@@ -53,6 +53,7 @@ export default function DisplayPointTxt(props) {
           fontFamily: "DIN Alternate, sans-serif",
           margin: pointMargin,
         }}
+        className="pointTxt"
       >
         {point}
       </p>

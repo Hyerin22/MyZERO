@@ -5,3 +5,13 @@
     cursor: pointer;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .button-cont {
+    button {
+      width: 150px !important;
+      height: 40px !important;
+      font-size: 17px !important;
+    }
+  }
+}

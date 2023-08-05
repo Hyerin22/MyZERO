@@ -69,11 +69,11 @@ export default function CityTop10() {
 
   return (
     <div className="top10-cont">
-      <div className="ranking">
+      {/* <div className="ranking">
         <p>1st</p>
         <p>2nd</p>
         <p>3rd</p>
-      </div>
+      </div> */}
       {fakeTop10.length > 0 &&
         fakeTop10.map((user) => (
           <div className="top10-info" key={user.id}>

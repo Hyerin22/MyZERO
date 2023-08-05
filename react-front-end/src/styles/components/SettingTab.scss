@@ -28,6 +28,14 @@
 
   .input {
     margin-bottom: 15px;
+
+    .pw-pw {
+      font-size: 30px;
+    }
+
+    .pw-text {
+      font-size: 20px;
+    }
   }
 
   .pw {
@@ -45,5 +53,58 @@
   .setting-buttons {
     display: flex;
     margin-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .setting-cont {
+    input {
+      width: 170px;
+      height: auto;
+      padding: 10px 15px;
+      font-size: 15px;
+    }
+
+    select {
+      width: 210px;
+      font-size: 15px;
+    }
+    .input {
+      .pw-pw {
+        font-size: 18px;
+      }
+      .pw-text {
+        font-size: 15px;
+      }
+    }
+
+    .pw {
+      svg {
+        width: 20px;
+        right: -30px;
+      }
+    }
+
+    .setting-buttons {
+      flex-direction: column;
+
+      div:nth-child(1) {
+        button {
+          margin-right: 0px !important;
+        }
+      }
+      div:nth-child(2) {
+        order: -1;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .setting-cont {
+    input {
+      font-size: 18px;
+    }
   }
 }

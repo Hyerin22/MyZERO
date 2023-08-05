@@ -16,6 +16,8 @@ import TabGroup from "./TabGroup";
 import CityInfo from "./CityInfo";
 import HomeMyZERO from "../pages/HomeMyZERO";
 import Setting from "../pages/Setting";
+import Sidebar from "./Sidebar";
+import HamburgerNav from "./HamburgerNav";
 
 // images
 import vancSymbol from "../img/vancouver-symbol.jpeg";
@@ -58,26 +60,18 @@ export default function CityDetailLayout() {
       });
   }, []);
 
+  // for Hamburger menu
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="home-container">
       {/* Sidebar */}
-      <div className="sidebar">
-        <div className="sidebar-top">
-          <RatingProfile ratingImage={plantLevel(state.points)} />
-          <Profile 
-            city={state.cities}  
-            user={state.user} 
-            this_month={state.this_month} 
-          />
-        </div>
-        <div className="nav">
-          <Nav />
-        </div>
-        <div className="footer">
-          <Footer />
-        </div>
-      </div>
+      <Sidebar />
       {/* Right side main content */}
+      <HamburgerNav isOpen={isOpen} onClick={toggleMenu} />
       <div className="home-main">
         <div className="home-top">
           <DisplayPointTxt

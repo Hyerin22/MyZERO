@@ -111,9 +111,10 @@ export default function SettingTab() {
           <input
             type={showPassword ? "text" : "password"}
             defaultValue={state.user.password_digest}
-            style={{
-              fontSize: showPassword ? "20px" : "30px",
-            }}
+            // style={{
+            //   fontSize: showPassword ? "20px" : "30px",
+            // }}
+            className={showPassword ? "pw-text" : "pw-pw"}
           />
           <FontAwesomeIcon
             icon={showPassword ? faEye : faEyeSlash}
@@ -127,7 +128,7 @@ export default function SettingTab() {
         <select
           id="cityDropdown"
           // defaultValue={fakeUser.location}
-          value={selectedCity}
+          defaultValuevalue={selectedCity}
           onChange={handleCityChange}
         >
           <option value="">Current: {cityNames[state.user.city_id]}</option>
