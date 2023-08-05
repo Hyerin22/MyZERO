@@ -7,7 +7,7 @@
     // justify-content: center;
     .city-name {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       p {
         font-family: $pointFont;
         font-size: 28px;
@@ -20,6 +20,15 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       margin-top: 50px;
+
+      div {
+        &:first-child {
+          justify-content: center;
+          p:first-child {
+            display: none;
+          }
+        }
+      }
 
       .dday {
         display: flex;
@@ -123,44 +132,134 @@
   }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (max-width: 600px) {
   .cityinfo-cont {
     .city-top {
       .city-name {
-        // display: flex;
-        // align-items: baseline;
         p {
-          // font-family: $pointFont;
-          // font-size: 28px;
-          // margin: 0 0 0 10px;
+          font-size: 20px;
         }
       }
       .city-info {
-        // display: flex;
-        // margin-top: 50px;
-
-        .dday {
-          // display: flex;
-          // flex-direction: column;
-          // align-items: center;
-          // margin-left: 240px;
-          // margin-left: 100px;
-
-          p {
-            // font-size: 76px;
-            // color: $mainColor;
-            // font-family: $pointFont;
-            // margin: 0;
+        div {
+          &:first-child {
+            p:nth-child(2) {
+              font-size: 40px !important;
+            }
           }
-
+        }
+        .dday {
+          p {
+            font-size: 40px;
+          }
           span {
-            // font-size: 14px;
+            font-size: 10px;
           }
         }
       }
     }
 
     .cityInfo-tab-cont {
+      margin-top: 25px;
+      .cityInfo-tab-container {
+        .cityInfo-tab {
+          padding: 5px 10px;
+          font-size: 10px;
+          border-radius: 8px 8px 0 0;
+        }
+      }
+
+      .cityInfo-content-box {
+        grid-template-columns: 1fr;
+        height: 30vh;
+        padding: 20px 25px;
+        border-radius: 18px;
+
+        p {
+          font-size: 12px;
+        }
+
+        .ranking {
+          p {
+            font-size: 10px;
+          }
+          p:nth-child(1) {
+            left: 25px;
+            top: 10px;
+          }
+          p:nth-child(2) {
+            left: 25px;
+            top: 40px;
+          }
+          p:nth-child(3) {
+            left: 25px;
+            top: 70px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .cityinfo-cont {
+    .city-top {
+      .city-name {
+        p {
+          font-size: 25px;
+        }
+      }
+      .city-info {
+        div {
+          &:first-child {
+            p:nth-child(2) {
+              font-size: 60px !important;
+            }
+          }
+        }
+        .dday {
+          p {
+            font-size: 60px;
+          }
+        }
+      }
+    }
+
+    .cityInfo-tab-cont {
+      margin-top: 30px;
+      .cityInfo-tab-container {
+        .cityInfo-tab {
+          font-size: 12px;
+        }
+      }
+
+      .cityInfo-content-box {
+        grid-template-columns: 1fr;
+        height: 23vh;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .cityinfo-cont {
+    .cityInfo-tab-cont {
+      .cityInfo-content-box {
+        column-gap: 60px;
+        padding: 35px 85px;
+
+        .ranking {
+          p:nth-child(1) {
+            left: 45px;
+          }
+          p:nth-child(2) {
+            left: 45px;
+          }
+          p:nth-child(3) {
+            left: 45px;
+          }
+        }
+      }
     }
   }
 }
