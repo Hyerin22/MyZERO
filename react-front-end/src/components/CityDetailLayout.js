@@ -14,6 +14,8 @@ import TabGroup from "./TabGroup";
 import CityInfo from "./CityInfo";
 import HomeMyZERO from "../pages/HomeMyZERO";
 import Setting from "../pages/Setting";
+import Sidebar from "./Sidebar";
+import HamburgerNav from "./HamburgerNav";
 
 // images
 import ratingSecond from "../img/rating-second.png";
@@ -30,22 +32,18 @@ export default function CityDetailLayout() {
     Setting: Setting,
   };
 
+  // for Hamburger menu
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="home-container">
       {/* Sidebar */}
-      <div className="sidebar">
-        <div className="sidebar-top">
-          <RatingProfile ratingImage={ratingSecond} />
-          <Profile symbol={vancSymbol} />
-        </div>
-        <div className="nav">
-          <Nav />
-        </div>
-        <div className="footer">
-          <Footer />
-        </div>
-      </div>
+      <Sidebar />
       {/* Right side main content */}
+      <HamburgerNav isOpen={isOpen} onClick={toggleMenu} />
       <div className="home-main">
         <div className="home-top">
           <DisplayPointTxt

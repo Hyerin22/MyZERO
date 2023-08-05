@@ -14,6 +14,9 @@ import TabGroup from "./TabGroup";
 import CityTop10 from "./CityTop10";
 import CityPrev from "./CityPrev";
 
+// data
+import { fakeTop10 } from "../mockdata/fakeData";
+
 export default function CityInfo() {
   // for data
   // const [data, setData] = useState([]);
@@ -65,13 +68,13 @@ export default function CityInfo() {
   }, []);
 
   // for the tab menu
-  const tabTypes = ["Top10", "Prev"];
-  const [activeTab, setActiveTab] = useState(tabTypes[0]);
+  // const tabTypes = ["Top10", "Prev"];
+  // const [activeTab, setActiveTab] = useState(tabTypes[0]);
 
-  const tabPages = {
-    Top10: CityTop10,
-    Prev: CityPrev,
-  };
+  // const tabPages = {
+  //   Top10: CityTop10,
+  //   Prev: CityPrev,
+  // };
 
   const navigate = useNavigate();
 
@@ -106,7 +109,27 @@ export default function CityInfo() {
             </div>
           </div>
           <div className="cityInfo-tab-cont">
-            <TabGroup
+            <div className="cityInfo-tab-container">
+              <div className="cityInfo-tab">Top 10</div>
+            </div>
+            <div className="cityInfo-content-box">
+              <div className="ranking">
+                <p>1st</p>
+                <p>2nd</p>
+                <p>3rd</p>
+              </div>
+              {fakeTop10.length > 0 &&
+                fakeTop10.map((user) => (
+                  <div className="cityInfo-user" key={user.id}>
+                    <p>
+                      {user.username.slice(0, 3) +
+                        "*".repeat(user.username.length - 3)}
+                    </p>
+                    <p>{user.points} pt</p>
+                  </div>
+                ))}
+            </div>
+            {/* <TabGroup
               types={tabTypes}
               tabPages={tabPages}
               marginL="10px"
@@ -117,7 +140,7 @@ export default function CityInfo() {
               boxHeight="300px"
               tabMarginR="100px"
               boxPadding="35px 130px"
-            />
+            /> */}
           </div>
         </div>
       )}

@@ -77,18 +77,17 @@
 
 @media only screen and (max-width: 600px) {
   .myZero-cont {
+    .myZero-top {
+      flex-direction: column;
+
+      div:nth-child(2) {
+        order: -1;
+      }
+    }
     .myZero-mid {
       .heading {
         font-size: 20px;
       }
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .myZero-cont {
-    .myZero-top {
-      flex-direction: column;
     }
   }
 }

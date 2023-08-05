@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 // styles
 import "../styles/Home.scss";
@@ -16,17 +16,23 @@ import Sidebar from "../components/Sidebar";
 import HomeMyZERO from "./HomeMyZERO";
 import CommTabCities from "../components/CommTabCities";
 import SettingTab from "../components/SettingTab";
+import HamburgerNav from "../components/HamburgerNav";
 
 export default function Community() {
   // for the tab menu
   const tabTypes = ["MyZERO", "Community", "Setting"];
   const [activeTab, setActiveTab] = useState(tabTypes[1]);
 
- 
   const tabPages = {
     MyZERO: HomeMyZERO,
     Community: CommTabCities,
     Setting: SettingTab,
+  };
+
+  // for Hamburger menu
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -34,6 +40,7 @@ export default function Community() {
       {/* Sidebar */}
       <Sidebar />
       {/* Right side main content */}
+      <HamburgerNav isOpen={isOpen} onClick={toggleMenu} />
       <div className="home-main">
         <div className="home-top">
           <DisplayPointTxt
