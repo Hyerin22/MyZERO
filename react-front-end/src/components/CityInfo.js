@@ -19,7 +19,6 @@ const getUserPoints = async (user, currentMonth) => {
     const pointRes = await axios.get(`/api/points/${user.id}/month?months=${currentMonth}`);
     const userPoint = pointRes.data;
     const this_month = userPoint.find(item => item.month === currentMonth)?.month_points;
-    console.log("currentMonth", currentMonth);
 
     return { ...user, this_month };
   } catch (error) {
