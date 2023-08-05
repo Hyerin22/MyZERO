@@ -114,7 +114,7 @@ export default function CityInfo() {
     // Update the countdown every second
     const interval = setInterval(() => {
       calculateCountdown();
-    }, 1000);
+    }, 86400);
 
     // Clean up the interval on unmount
     return () => clearInterval(interval);
@@ -122,6 +122,8 @@ export default function CityInfo() {
 
 
   const navigate = useNavigate();
+
+  const sortedTop10 = fakeTop10.sort((a, b) => b.points - a.points);
 
   return (
     <div className="cityinfo-cont">
@@ -164,7 +166,8 @@ export default function CityInfo() {
                 <p>2nd</p>
                 <p>3rd</p>
               </div>
-              {state.users.length > 0 &&
+              <div className="cityInfo-user-cont">
+                {state.users.length > 0 &&
                 state.users.map((user) => (
                   <div className="cityInfo-user" key={user.id}>
                     <p>
@@ -174,6 +177,7 @@ export default function CityInfo() {
                     <p>{user?.this_month} pt</p>
                   </div>
                 ))}
+              </div>
             </div>
           </div>
         </div>
