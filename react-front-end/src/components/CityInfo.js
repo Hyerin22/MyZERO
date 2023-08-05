@@ -34,7 +34,7 @@ export default function CityInfo() {
     users: [],
     point: 0,
   });
- 
+
   // Get city_user's info
   // Get user info
   // Combine city_user data with user data
@@ -86,7 +86,7 @@ export default function CityInfo() {
       });
   }, []);
 
-console.log("CityInfo: data?", state);
+  // console.log("CityInfo: data?", state);
 
   // for D-day
   const [countdown, setCountdown] = useState(0);
@@ -128,10 +128,10 @@ console.log("CityInfo: data?", state);
       {state && (
         <div>
           <div className="city-top" key={id}>
-            <div className="city-name" 
-                onClick={() => {
-                  navigate(-1);
-                }}
+            <div className="city-name"
+              onClick={() => {
+                navigate(-1);
+              }}
             >
               <FontAwesomeIcon
                 icon={faChevronLeft}
@@ -166,15 +166,17 @@ console.log("CityInfo: data?", state);
               </div>
               <div className="cityInfo-user-cont">
                 {state.users.length > 0 &&
-                state.users.map((user) => (
-                  <div className="cityInfo-user" key={user.id}>
-                    <p>
-                      {user.email.slice(0, 3) +
-                        "*".repeat(user.email.length - 3)}
-                    </p>
-                    <p>{user?.this_month} pt</p>
-                  </div>
-                ))}
+                  state.users.map((user) => (
+                    <div className="cityInfo-user" key={user.id}>
+                      <p>
+                        {(() => {
+                          const nineEmail = user.email.slice(0, 12);
+                          return nineEmail.slice(0, 3) + "*".repeat(nineEmail.length);
+                        })()}
+                      </p>
+                      <p>{user.this_month} pt</p>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
@@ -183,3 +185,5 @@ console.log("CityInfo: data?", state);
     </div>
   );
 }
+
+
