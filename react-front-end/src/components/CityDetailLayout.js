@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { plantLevel, currentMonth } from '../hooks/pointsUtils'
 
 // styles
 import "../styles/components/CityDetailLayout.scss";
@@ -16,10 +18,17 @@ import HomeMyZERO from "../pages/HomeMyZERO";
 import Setting from "../pages/Setting";
 
 // images
-import ratingSecond from "../img/rating-second.png";
 import vancSymbol from "../img/vancouver-symbol.jpeg";
 
 export default function CityDetailLayout() {
+
+  const [state, setState] = useState({
+    cities: [],
+    user: {id:1},
+    this_month:{},
+  });
+  console.log("state", state);
+  
   // for the tab menu
   const tabTypes = ["MyZERO", "Community", "Setting"];
   const [activeTab, setActiveTab] = useState(tabTypes[1]);
@@ -29,14 +38,37 @@ export default function CityDetailLayout() {
     Community: CityInfo,
     Setting: Setting,
   };
+  
+
+  // get user's this month point
+  useEffect(() => {
+    axios
+      .get(`/api/points/${state.user.id}/month?months=${currentMonth}`)
+      .then((res) => {
+        
+        const this_month = res.data[3].month_points;
+
+        setState((prev) => ({
+          ...prev,
+          this_month,
+        }));
+      })
+      .catch((err) => {
+        console.error("connect error:", err.message);
+      });
+  }, []);
 
   return (
     <div className="home-container">
       {/* Sidebar */}
       <div className="sidebar">
         <div className="sidebar-top">
-          <RatingProfile ratingImage={ratingSecond} />
-          <Profile symbol={vancSymbol} />
+          <RatingProfile ratingImage={plantLevel(state.points)} />
+          <Profile 
+            city={state.cities}  
+            user={state.user} 
+            this_month={state.this_month} 
+          />
         </div>
         <div className="nav">
           <Nav />
@@ -50,7 +82,6 @@ export default function CityDetailLayout() {
         <div className="home-top">
           <DisplayPointTxt
             size="26px"
-            point="1,403"
             color="#1d828e"
             pointSize="76px"
             pointMargin="0px 7px"
