@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 // styles
@@ -11,46 +12,59 @@ import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-export default function LoginInput({
-  title,
-  signupDisplay,
-  bttnTxt = "Login",
-  backBttnDisplay,
-  onClickFunc,
-}) {
+export default function LoginInput(props) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  console.log("LoginInPut email, pws", email, ",", password )
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.onClickFunc( email, password );
+  };
+
   return (
     <div className="loginInput-cont">
       <div className="input-top">
         <Link
           to="/"
           style={{
-            display: backBttnDisplay,
+            display: props.backBttnDisplay,
           }}
         >
           <FontAwesomeIcon icon={faChevronLeft} size="3x" color="#1d828e" />
         </Link>
-        <p>{title}</p>
+        <p>{props.title}</p>
       </div>
-      <div className="inputs">
-        <input type="Email" placeholder="Email" />
-        <input type="password" placeholder="PW" />
-      </div>
+      <form className="inputs" onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="PW"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </form>
       <div className="buttons">
         <Button
-          title={bttnTxt}
+          title={props.bttnTxt}
           border="none"
           bgColor="#1d828e"
           radius="30px"
           color="white"
           margin="0 0 0 0"
           width="335px"
-          onClick={onClickFunc}
+          onClick={props.onClickFunc}
         />
 
         <div
           className="forSignup"
           style={{
-            display: signupDisplay,
+            display: props.signupDisplay,
           }}
         >
           <p>Want to join MyZERO?</p>

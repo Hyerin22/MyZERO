@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { plantLevel, getCitySymbol, currentMonth } from '../hooks/pointsUtils';
-  
+
 
 //styles
 import "../styles/components/Sidebar.scss";
@@ -12,15 +12,15 @@ import RatingProfile from "../components/RatingProfile";
 import Profile from "../components/Profile";
 import Footer from "../components/Footer";
 
-// images
-import ratingSecond from "../img/level02.png";
-import vancSymbol from "../img/vancouver-symbol.jpeg";
 
 export default function Sidebar() {
+  // Get stored user data
+  const storedUser = sessionStorage.getItem('user');
+  const currentUser = storedUser ? JSON.parse(storedUser).id : 0;
 
   const [state, setState] = useState({
-    user: {id:1},
-    this_month:{},
+    user: { id: currentUser },
+    this_month: {},
   });
 
   //get user info
@@ -43,8 +43,9 @@ export default function Sidebar() {
     axios
       .get(`/api/points/${state.user.id}/month?months=${currentMonth}`)
       .then((res) => {
-        
-        const this_month = res.data[3].month_points;
+
+        const userPoint = res.data;
+        const this_month = userPoint.find(item => item.month === currentMonth)?.month_points;
 
         setState((prev) => ({
           ...prev,
@@ -56,6 +57,16 @@ export default function Sidebar() {
       });
   }, []);
 
+  // logout 
+  const logout = () => {
+    axios.post('/api/logout')
+      .then(() => {
+        sessionStorage.clear();
+        // setUser(null);
+      });
+  };
+
+
   return (
     <div className="sidebar">
       <div className="sidebar-top">
@@ -63,7 +74,7 @@ export default function Sidebar() {
         <Profile user={state.user} />
       </div>
       <div className="nav">
-        <Nav />
+        <Nav logout={logout} />
       </div>
       <div className="footer">
         <Footer />
