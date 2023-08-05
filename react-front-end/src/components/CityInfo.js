@@ -41,10 +41,12 @@ export default function CityInfo() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cityUserRes = await axios.get(`/api/city-user/${id}`);
+        const [cityUserRes, userRes] = await Promise.all([
+          axios.get(`/api/city-user/${id}`),
+          axios.get(`/api/users`)
+        ]);
+        
         const cityUserdata = cityUserRes.data;
-
-        const userRes = await axios.get(`/api/users`);
         const usersData = userRes.data;
 
         const matchedUsers = usersData.filter(user => {
