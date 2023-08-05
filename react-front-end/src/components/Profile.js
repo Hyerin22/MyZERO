@@ -17,7 +17,6 @@ const cityNames = {
   5: "Richmond",
   6: "Langley"
 };
-console.log("프로필", props);
 
 
   return (

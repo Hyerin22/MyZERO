@@ -42,6 +42,7 @@ export default function CommTabCities() {
     fetchData();
   }, []);
   
+  console.log("씨티 피플", state);
 
   return (
     <div className="community-cont">

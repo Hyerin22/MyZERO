@@ -29,7 +29,6 @@ export default function CityDetailLayout() {
     user: {id:1},
     this_month:{},
   });
-  console.log("state", state);
   
   // for the tab menu
   const tabTypes = ["MyZERO", "Community", "Setting"];

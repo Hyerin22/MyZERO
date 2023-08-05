@@ -45,7 +45,6 @@ export default function Sidebar() {
       .then((res) => {
         
         const this_month = res.data[3].month_points;
-        console.log("this_month", this_month);
 
         setState((prev) => ({
           ...prev,
