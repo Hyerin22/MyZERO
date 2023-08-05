@@ -7,9 +7,6 @@ import "../styles/components/CommTabCities.scss";
 // components
 import City from "./City";
 
-// imgs
-import vancouver from "../img/vancouver.jpeg";
-
 export default function CommTabCities() {
   const [state, setState] = useState({
     cities: [],
