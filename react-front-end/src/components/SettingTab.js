@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { plantLevel, currentMonth } from '../hooks/pointsUtils';
+import { plantLevel, currentMonth } from '../provider/pointsUtils';
 
 // styles
 import "../styles/components/SettingTab.scss";

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { getMonthName } from '../hooks/pointsUtils';
+import { getMonthName } from '../provider/pointsUtils';
 
 import {
   Chart as ChartJS,
@@ -30,12 +30,9 @@ export const options = {
 };
 
 export default function HomeMyZERO() {
-  // Get stored user data
-  const storedUser = sessionStorage.getItem('user');
-  const currentUser = storedUser ? JSON.parse(storedUser).id : 0;
 
   const [state, setState] = useState({
-    id: currentUser,
+    id: 1,
     three_month: {},
     two_month: {},
     one_month: {},

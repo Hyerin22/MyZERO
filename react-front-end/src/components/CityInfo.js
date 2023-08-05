@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams, useNavigate } from "react-router-dom";
-import { currentMonth } from '../hooks/pointsUtils';
+import { currentMonth } from '../provider/pointsUtils';
 
 // styles
 import "../styles/components/CityInfo.scss";
@@ -86,7 +86,7 @@ export default function CityInfo() {
       });
   }, []);
 
-
+console.log("CityInfo: data?", state);
 
   // for D-day
   const [countdown, setCountdown] = useState(0);
@@ -111,7 +111,7 @@ export default function CityInfo() {
   useEffect(() => {
     calculateCountdown();
 
-    // Update the countdown every second
+    // Update the countdown every hour
     const interval = setInterval(() => {
       calculateCountdown();
     }, 3600);
@@ -122,8 +122,6 @@ export default function CityInfo() {
 
 
   const navigate = useNavigate();
-
-  // const sortedTop10 = fakeTop10.sort((a, b) => b.points - a.points);
 
   return (
     <div className="cityinfo-cont">

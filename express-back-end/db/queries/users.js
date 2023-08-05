@@ -2,7 +2,7 @@ const db = require('../connection');
 
 // Get all users
 const getAll = () => {
-  const queryString = `SELECT * FROM users ORDER BY first_name;`;
+  const queryString = `SELECT * FROM users ORDER BY id ;`;
   return db.query(queryString)
     .then(res => res.rows);
 };

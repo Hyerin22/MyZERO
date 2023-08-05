@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // styles
 import "../styles/components/LoginInput.scss";
@@ -13,13 +13,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function LoginInput(props) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  console.log("LoginInPut email, pws", email, ",", password )
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    props.onClickFunc( email, password );
+    // event.preventDefault();
+    // props.onClickFunc( email, password );
+    navigate('/MyZero');
   };
 
   return (
@@ -35,30 +35,26 @@ export default function LoginInput(props) {
         </Link>
         <p>{props.title}</p>
       </div>
-      <form className="inputs" onSubmit={handleSubmit}>
+      <form className="inputs">
         <input
           type="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           placeholder="PW"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
         />
       </form>
       <div className="buttons">
         <Button
-          title={props.bttnTxt}
+          title="Login"
           border="none"
           bgColor="#1d828e"
           radius="30px"
           color="white"
           margin="0 0 0 0"
           width="335px"
-          onClick={props.onClickFunc}
+          onSubmit={handleSubmit()}
         />
 
         <div

@@ -43,7 +43,7 @@ export default function Nav() {
         </li>
         {/* just for now */}
         <li className="nav-item">
-          <NavLink to="/blank">Logout</NavLink>
+          <NavLink to="/Login">Logout</NavLink>
         </li>
       </ul>
     </div>

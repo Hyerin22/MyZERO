@@ -7,10 +7,8 @@ import "../styles/Login.scss";
 import LoginLeftSide from "../components/LoginLeftSide";
 import LoginInput from "../components/LoginInput";
 
-export default function Login(props) {
-  const handleSubmit = (email, password) => {
-    props.login(email, password); 
-  };
+export default function Login() {
+
   return (
     <div className="login-cont">
       <LoginLeftSide />
@@ -18,7 +16,6 @@ export default function Login(props) {
         <LoginInput 
           title="Login"
           backBttnDisplay="none"
-          onClickFunc={handleSubmit}
         />
       </div>
     </div>
