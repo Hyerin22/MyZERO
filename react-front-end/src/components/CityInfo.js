@@ -78,6 +78,8 @@ export default function CityInfo() {
 
   const navigate = useNavigate();
 
+  const sortedTop10 = fakeTop10.sort((a, b) => b.points - a.points);
+
   return (
     <div className="cityinfo-cont">
       {city && (
@@ -118,16 +120,18 @@ export default function CityInfo() {
                 <p>2nd</p>
                 <p>3rd</p>
               </div>
-              {fakeTop10.length > 0 &&
-                fakeTop10.map((user) => (
-                  <div className="cityInfo-user" key={user.id}>
-                    <p>
-                      {user.username.slice(0, 3) +
-                        "*".repeat(user.username.length - 3)}
-                    </p>
-                    <p>{user.points} pt</p>
-                  </div>
-                ))}
+              <div className="cityInfo-user-cont">
+                {sortedTop10.length > 0 &&
+                  sortedTop10.map((user) => (
+                    <div className="cityInfo-user" key={user.id}>
+                      <p>
+                        {user.username.slice(0, 3) +
+                          "*".repeat(user.username.length - 3)}
+                      </p>
+                      <p>{user.points} pt</p>
+                    </div>
+                  ))}
+              </div>
             </div>
             {/* <TabGroup
               types={tabTypes}
