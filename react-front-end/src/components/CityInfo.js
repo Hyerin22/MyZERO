@@ -114,7 +114,7 @@ export default function CityInfo() {
     // Update the countdown every second
     const interval = setInterval(() => {
       calculateCountdown();
-    }, 86400);
+    }, 3600);
 
     // Clean up the interval on unmount
     return () => clearInterval(interval);
@@ -123,7 +123,7 @@ export default function CityInfo() {
 
   const navigate = useNavigate();
 
-  const sortedTop10 = fakeTop10.sort((a, b) => b.points - a.points);
+  // const sortedTop10 = fakeTop10.sort((a, b) => b.points - a.points);
 
   return (
     <div className="cityinfo-cont">
