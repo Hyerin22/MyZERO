@@ -104,10 +104,10 @@ To get started with the repository [MyZERO](https://github.com/ktehi21/MyZERO), 
 - Update the .env file with your correct local information 
   - username: `myzero` 
   - password: `myzero` 
-  - database: `myzero`
-  (In case of you want to use the data that is ready, 
-  use the psql, inside the myzero DB
-    \i db/schema/tables.sql 
+  - database: `myzero`                   
+  (In case of you want to use the data that is ready,               
+  use the psql, inside the myzero DB                 
+    \i db/schema/tables.sql                    
     \i db/seeds/seeds.sql  
   )
 
