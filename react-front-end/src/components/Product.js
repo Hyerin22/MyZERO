@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 // styles
 import "../styles/components/Products.scss";
@@ -6,6 +8,7 @@ import "../styles/components/Products.scss";
 import Button from "./Button";
 
 export default function Product({
+  id,
   prodImg,
   productName,
   brandName = "Walmart",
@@ -18,12 +21,42 @@ export default function Product({
   divPadding = "10px 0px",
   imgBoxHeight = "165px",
 }) {
-  const handleBuyClick = () => {
+
+
+  // const handleBuyProduct = async () => {
+  //   try {
+  //     const response = await axios.post('/api/products', {
+  //       user_id: 1,
+  //       city_id: 1,
+  //     });
+
+  //     alert('Thank you for your help to the world!\nYou\'ve got 20 points collected!');
+  //     window.location.reload();
+
+
+  //   } catch (error) {
+  //     console.error('Error collecting MyZero:', error.message);
+  //     alert('Sorry something wrong. Try again: ' + error.message);
+  //   }
+  // };
+
+  console.log("products id", id);
+  console.log("products productName", productName);
+  const navigate = useNavigate();
+
+  // product buy function
+  const handleBuyClick = async () => {
     if (
       window.confirm(
         `Are you sure you want to buy ${productName} ${prodPoint}pt?`
       )
-    ) {
+    ) 
+    try {
+      const response = await axios.post('/api/products', {
+        user_id: 1,
+        product_id: id,
+      });
+      
       window.alert("Confirmed! You can check it on the MyBuy Tab!");
 
       const existingPurchases =
@@ -39,8 +72,15 @@ export default function Product({
       existingPurchases.push(purchaseInfo);
 
       localStorage.setItem("purchased", JSON.stringify(existingPurchases));
+
+      navigate("/MyBuy");
+    }
+    catch (error) {
+      console.error('Error collecting MyZero:', error.message);
+      alert('Sorry something wrong. Try again: ' + error.message);
     }
   };
+
 
   return (
     <div className="prod-container">
