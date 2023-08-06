@@ -32,9 +32,9 @@ We are thrilled to provide a platform that empowers users to make a positive imp
 
 - React
 - Sass
+- Chart.js
 - PostgreSQL
 - Express.js
-- Chart.js
 
 ## Duration
 
@@ -80,7 +80,7 @@ https://github.com/ktehi21
 
 ### Rina Cheon
 
-#### Front-end Developer
+#### Frontend Developer
 
 hlyni22@gmail.com  
 www.hyerincheon.ca  
