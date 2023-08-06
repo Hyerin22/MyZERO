@@ -14,7 +14,7 @@ One of our standout features is the ability to redeem points for various product
 
 To ensure authenticity, Users can receive certification from restaurants or cafes that they have used reusable containers. This feature grants them additional points, making the process transparent and fair. We plan to collaborate with point-of-sale companies to streamline this aspect in the future.
 
-Notable Features --
+### Notable Features 
 
 - Regional leaderboards showcasing the top 10 users in each area based on their monthly points.
 - When uploading a receipt with the certification that the reusable container has been used, it automatically recognizes and provides points. (Coming Soon)
@@ -42,17 +42,23 @@ Figma Link: <br />
 https://www.figma.com/file/ZMbEnoDTY79aAH94zVrxOp/GNEC-Hackathon?type=design&node-id=0%3A1&mode=design&t=C67nGPi8Ic6VGlSc-1
 
 ## Result
-[https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO01_Home.png]
-[https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO02_Community.png]
-[https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO03_City.png]
-[https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO04_Store.png]
-[https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO05_MyBuy.png]
-[https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO08_Setting.png]
+- Main page
+!["Main page"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO01_Home.png)
+- Community
+!["Community"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO02_Community.png)
+- City Detail
+!["City Detail"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO03_City.png)
+- Store
+!["Store"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO04_Store.png)
+- MyBuy
+!["MyBuy"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO05_MyBuy.png)
+- Setting
+!["Setting"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO08_Setting.png)
 
 
 ## Members 
 ### Taehee Kim 
-(Full Stack Developer)
+Full Stack Developer
 k.tehi21@gmail.com    
 https://www.linkedin.com/in/taehee-kim-van0216/
 https://github.com/ktehi21
@@ -62,7 +68,7 @@ https://github.com/ktehi21
  
 
 ### Rina Cheon 
-(Front-end Developer)
+Front-end Developer
 hlyni22@gmail.com    
 www.hyerincheon.ca     
 www.linkedin.com/in/rinaacheon     
