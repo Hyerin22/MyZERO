@@ -7,7 +7,6 @@ import Footer from "./Footer";
 export default function LoginLeftSide() {
   return (
     <div className="left-side">
-      {/* <div className="left-bot"></div> */}
       <div className="left-top">
         <Footer to="/" />
         <p className="welcome">

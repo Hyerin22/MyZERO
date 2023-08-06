@@ -22,24 +22,6 @@ export default function Product({
   imgBoxHeight = "165px",
 }) {
 
-
-  // const handleBuyProduct = async () => {
-  //   try {
-  //     const response = await axios.post('/api/products', {
-  //       user_id: 1,
-  //       city_id: 1,
-  //     });
-
-  //     alert('Thank you for your help to the world!\nYou\'ve got 20 points collected!');
-  //     window.location.reload();
-
-
-  //   } catch (error) {
-  //     console.error('Error collecting MyZero:', error.message);
-  //     alert('Sorry something wrong. Try again: ' + error.message);
-  //   }
-  // };
-
   console.log("products id", id);
   console.log("products productName", productName);
   const navigate = useNavigate();
@@ -99,7 +81,6 @@ export default function Product({
             height: imgBoxHeight,
           }}
         >
-          {/* <img src={`/img/product/${prodImg}`} alt="product" /> */}
           <img src={`/img/product/${prodImg}`} alt="product" />
         </div>
         <div

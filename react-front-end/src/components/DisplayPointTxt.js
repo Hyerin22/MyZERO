@@ -19,8 +19,6 @@ export default function DisplayPointTxt(props) {
         console.error("connect error:", err.message);
       });
   }, []);
-  // console.log("did you get the data?",state.total_point);
-
 
   const {
     text = "You have",

@@ -19,8 +19,6 @@ import Setting from "../pages/Setting";
 import Sidebar from "./Sidebar";
 import HamburgerNav from "./HamburgerNav";
 
-// images
-import vancSymbol from "../img/vancouver-symbol.jpeg";
 
 export default function CityDetailLayout() {
 

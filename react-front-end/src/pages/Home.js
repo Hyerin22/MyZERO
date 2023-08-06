@@ -17,10 +17,6 @@ import CommTabCities from "../components/CommTabCities";
 import HomeMyZERO from "./HomeMyZERO";
 import SettingTab from "../components/SettingTab";
 
-// images
-// import ratingSecond from "../img/rating-second.png";
-// import vancSymbol from "../img/vancouver-symbol.jpeg";
-
 export default function Home() {
   // for the tab menu
   const tabTypes = ["MyZERO", "Community", "Setting"];

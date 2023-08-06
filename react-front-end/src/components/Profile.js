@@ -4,11 +4,7 @@ import { getCitySymbol } from '../helper/pointsUtils';
 import "../styles/components/Profile.scss";
 
 export default function Profile(props) {
-//   {
-//   username = "user",
-//   location = "default-location",
-//   symbol,
-// }
+
 const cityNames = {
   1: 'Vancouver',
   2: 'Burnaby',

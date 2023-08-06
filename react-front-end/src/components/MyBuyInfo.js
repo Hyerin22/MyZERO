@@ -5,7 +5,6 @@ import "../styles/components/MyBuyInfo.scss";
 
 import Product from "./Product";
 
-
 export default function MyBuyInfo() {
   const purchaseHistory = JSON.parse(localStorage.getItem("purchased"));
 
@@ -18,7 +17,6 @@ export default function MyBuyInfo() {
   useEffect(() => {
     axios.get(`/api/usage/${state.id}`)
       .then((res) => {
-
 
         const combinedData = res.data.earnedData.concat(res.data.spendData);
         console.log("combinedData", combinedData);
@@ -41,7 +39,7 @@ export default function MyBuyInfo() {
 
         updatedUsage.sort((a, b) => b.id - a.id);
 
-        // birthday formatting: leave only YYYY-MM-DD
+        // date formatting: leave only YYYY-MM-DD
         const formattedData = updatedUsage.map((item) => ({
           ...item,
           date: item.date.substring(0, 10),
@@ -75,8 +73,7 @@ export default function MyBuyInfo() {
         {state.usage &&
           state.usage.length > 0 &&
           state.usage.map((history) => (
-            // <>
-            // {history.spend_point && 
+
             <div className="MBInfo-history" key={history.id}>
               <p>{history.date}</p>
               <p>{history.product_store}</p>
@@ -84,8 +81,6 @@ export default function MyBuyInfo() {
               {history.earned_point && <p>{history.earned_point} pt</p>}
               <p>{history.remaining_point} pt</p>
             </div>
-            // }
-            // </>
           ))}
       </div>
 
