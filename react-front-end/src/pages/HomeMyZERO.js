@@ -63,6 +63,7 @@ export default function HomeMyZERO() {
     axios
       .get(`/api/points/${state.id}/month?months=${selectedMonths.join(",")}`)
       .then((res) => {
+        console.log("Home month", res.data);
         // Convert numeric month to English name
         const formattedData = res.data.map((item) => ({
           month: getMonthName(item.month),

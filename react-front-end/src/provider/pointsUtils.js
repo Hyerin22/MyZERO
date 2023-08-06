@@ -47,5 +47,5 @@ export const getMonthName = (monthNumber) => {
   else if (monthNumber === 10) return 'October';
   else if (monthNumber === 11) return 'November';
   else if (monthNumber === 12) return 'December';
-  else return 'Invalid Month';
+  else return monthNumber;
 }
