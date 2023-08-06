@@ -1,9 +1,11 @@
 # MyZERO
-GNEC Hackathon project by Taehee and Rina 
+
+GNEC Hackathon project by Taehee and Rina
 <br />
 Theme: United Nations Sustainable Development Goals (UN SDGs)
 
 ### Our goal
+
 We are excited to introduce our new app 'MyZERO', which was created with a mission to address the global issue of single-use plastic waste and promote the use of reusable personal containers. We noticed that some individuals are already making efforts to carry reusable containers and be mindful of the environment. However, we wanted to find a way to encourage even more people to actively participate in this eco-friendly initiative.
 
 Thus, we came up with a unique concept that allows users to track their efforts, engage in healthy competition with others, and be rewarded for their eco-conscious actions. Through our point accumulation system, users earn points for their environmentally friendly choices. These points continuously accumulate, but each month, a badge is reset, and users can see a virtual tree grow based on their points. This visual representation encourages them to keep up their efforts and witness the impact of their actions over time.
@@ -14,7 +16,7 @@ One of our standout features is the ability to redeem points for various product
 
 To ensure authenticity, Users can receive certification from restaurants or cafes that they have used reusable containers. This feature grants them additional points, making the process transparent and fair. We plan to collaborate with point-of-sale companies to streamline this aspect in the future.
 
-### Notable Features 
+### Notable Features
 
 - Regional leaderboards showcasing the top 10 users in each area based on their monthly points.
 - When uploading a receipt with the certification that the reusable container has been used, it automatically recognizes and provides points. (Coming Soon)
@@ -26,8 +28,8 @@ To ensure authenticity, Users can receive certification from restaurants or cafe
 
 We are thrilled to provide a platform that empowers users to make a positive impact on the environment, one reusable choice at a time. With your support, we believe that together, we can create a greener and more sustainable future for everyone.
 
-
 ## Language
+
 - React
 - Sass
 - PostgreSQL
@@ -35,52 +37,58 @@ We are thrilled to provide a platform that empowers users to make a positive imp
 - Chart.js
 
 ## Duration
-July 17 ~ Aug 04
+
+July 17 ~ Aug 05
 
 ## Prototype
+
 Figma Link: <br />
 https://www.figma.com/file/ZMbEnoDTY79aAH94zVrxOp/GNEC-Hackathon?type=design&node-id=0%3A1&mode=design&t=C67nGPi8Ic6VGlSc-1
 
 ## Result
+
 - Main page
-!["Main page"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO01_Home.png)
+  !["Main page"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO01_Home.png)
 
 - Community
-!["Community"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO02_Community.png)
+  !["Community"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO02_Community.png)
 
 - City Detail
-!["City Detail"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO03_City.png)
+  !["City Detail"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO03_City.png)
 
 - Store
-!["Store"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO04_Store.png)
+  !["Store"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO04_Store.png)
 
 - MyBuy
-!["MyBuy"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO05_MyBuy.png)
+  !["MyBuy"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO05_MyBuy.png)
 
 - Setting
-!["Setting"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO06_Setting.png)
+  !["Setting"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO06_Setting.png)
 
+## Members
 
-## Members 
-### Taehee Kim 
-#### Full Stack Developer  
-k.tehi21@gmail.com     
-https://www.linkedin.com/in/taehee-kim-van0216/           
-https://github.com/ktehi21 
-- Backend
-- Frontend API
+### Taehee Kim
+
+#### Full Stack Developer
+
+k.tehi21@gmail.com  
+https://www.linkedin.com/in/taehee-kim-van0216/  
+https://github.com/ktehi21
+
+- Backend Development
 - Logo design
- 
 
-### Rina Cheon 
-#### Front-end Developer  
-hlyni22@gmail.com     
-www.hyerincheon.ca      
-www.linkedin.com/in/rinaacheon      
+### Rina Cheon
+
+#### Front-end Developer
+
+hlyni22@gmail.com  
+www.hyerincheon.ca  
+www.linkedin.com/in/rinaacheon  
 https://github.com/Hyerin22
-- Frontend 
-- App design
 
+- Frontend Development
+- UX/UI Design
 
 ## **Getting Started**
 
@@ -101,15 +109,16 @@ To get started with the repository [MyZERO](https://github.com/ktehi21/MyZERO), 
 
 - Create a `.env` file based on the provided `.env.example` file. Update the configuration settings as needed.
 
-- Update the .env file with your correct local information 
-  - username: `myzero` 
-  - password: `myzero` 
-  - database: `myzero`                   
-  (In case of you want to use the data that is ready,               
-  use the psql, inside the myzero DB                 
-    \i db/schema/tables.sql                    
-    \i db/seeds/seeds.sql  
-  )
+- Update the .env file with your correct local information
+
+  - username: `myzero`
+  - password: `myzero`
+  - database: `myzero`  
+    (In case of you want to use the data that is ready,  
+    use the psql, inside the myzero DB  
+     \i db/schema/tables.sql  
+     \i db/seeds/seeds.sql  
+    )
 
 - Install the dependencies by running the following command:
 
