@@ -120,7 +120,7 @@ export default function Product({
           bgColor="white"
           radius="20px"
           color="#1d828e"
-          onClick={handleBuyClick}
+          onclick={handleBuyClick}
         />
       </div>
     </div>

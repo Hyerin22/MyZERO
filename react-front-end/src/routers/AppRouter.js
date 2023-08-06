@@ -29,7 +29,7 @@ export default function AppRouter() {
         <Route path="/HowTo" element={<HowTo user={state.user.id}/>}></Route>
         <Route path="/Community" element={<Community user={state.user.id}/>}></Route>
         <Route path="/Setting" element={<Setting user={state.user.id} />}></Route>
-        <Route path="/Reward" element={<Store user={state.user.id}/>}></Route>
+        <Route path="/Redeem" element={<Store user={state.user.id}/>}></Route>
         <Route path="/MyBuy" element={<MyBuy user={state.user.id}/>}></Route>
       </Routes>
     </Router>

@@ -12,11 +12,11 @@ import HamburgerNav from "../components/HamburgerNav";
 
 export default function MyBuy() {
   // for the tab menu
-  const tabTypes = ["Reward", "MyBuy"];
+  const tabTypes = ["Redeem", "MyBuy"];
   const [activeTab, setActiveTab] = useState(tabTypes[1]);
 
   const tabPages = {
-    Reward: Reward,
+    Redeem: Reward,
     MyBuy: MyBuyInfo,
   };
 

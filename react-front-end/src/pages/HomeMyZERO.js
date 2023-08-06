@@ -63,7 +63,6 @@ export default function HomeMyZERO() {
     axios
       .get(`/api/points/${state.id}/month?months=${selectedMonths.join(",")}`)
       .then((res) => {
-        console.log("Home month", res.data);
         // Convert numeric month to English name
         const formattedData = res.data.map((item) => ({
           month: getMonthName(item.month),
@@ -131,7 +130,7 @@ export default function HomeMyZERO() {
         point: 20,
       });
   
-      alert('Thank you for your help to the world!\nYou\'ve got 20 point collected!');
+      alert('Thank you for your help to the world!\nYou\'ve got 20 points collected!');
       window.location.reload(); 
 
 
@@ -146,13 +145,13 @@ export default function HomeMyZERO() {
     <div className="myZero-cont">
       <div className="myZero-top">
         <Button
-          title="Collect MyZero"
+          title="Collect MyZERO"
           color="#ffffff"
           border="none"
           bgColor="linear-gradient(180deg, #fddb70 0%, #fead5e 100%)"
           font="DIN Alternate, sans-serif"
           radius="18px"
-          onClick={handleCollectMyZero}
+          onclick={handleCollectMyZero}
         />
         <DisplayPointTxt
           text="This month you collected"

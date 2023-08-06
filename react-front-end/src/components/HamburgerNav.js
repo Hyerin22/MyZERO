@@ -93,10 +93,10 @@ export default function HamburgerNav({
             </NavLink>
             <NavLink to="/HowTo">How to collect?</NavLink>
             <NavLink
-              to="/Reward"
+              to="/Redeem"
               className={`hamNav-link ${
                 currentPathname.includes("/Store") ||
-                currentPathname === "/Reward" ||
+                currentPathname === "/Redeem" ||
                 currentPathname === "/MyBuy"
                   ? "ham-active"
                   : ""
