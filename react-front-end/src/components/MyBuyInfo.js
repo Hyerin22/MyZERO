@@ -1,14 +1,76 @@
-import React from "react";
-
-// data
-import { fakeHistory } from "../mockdata/fakeData";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 import "../styles/components/MyBuyInfo.scss";
 
 import Product from "./Product";
 
+// get user's this month point
+const getUserPoints = async (user, currentMonth) => {
+  try {
+    const pointRes = await axios.get(`/api/points/${user.id}/month?months=${currentMonth}`);
+    const userPoint = pointRes.data;
+    const this_month = userPoint.slice(-1)[0].month_points;
+
+    return { ...user, this_month };
+  } catch (error) {
+    console.error("Error fetching user points:", error.message);
+    return user;
+  }
+};
+
 export default function MyBuyInfo() {
   const purchaseHistory = JSON.parse(localStorage.getItem("purchased"));
+
+  const [state, setState] = useState({
+    id: 1,
+    usage: 0,
+  });
+
+  // Get one user's usage
+  useEffect(() => {
+    axios.get(`/api/usage/${state.id}`)
+      .then((res) => {
+
+
+        const combinedData = res.data.earnedData.concat(res.data.spendData);
+        console.log("combinedData", combinedData);
+
+        let remaining_point = 0;
+        const updatedUsage = combinedData.map((item) => {
+        
+          if (item.spend_point) {
+            remaining_point -= item.spend_point;
+          }
+        
+          if (item.earned_point) {
+            remaining_point += item.earned_point;
+          }
+        
+          return { ...item, remaining_point };
+        });
+
+        console.log("updatedUsage", updatedUsage);
+
+        updatedUsage.sort((a, b) => b.id - a.id);
+
+        // birthday formatting: leave only YYYY-MM-DD
+        const formattedData = updatedUsage.map((item) => ({
+          ...item,
+          date: item.date.substring(0, 10),
+        }));
+
+        setState(prev => ({
+          ...prev,
+          usage: formattedData
+        }));
+      })
+      .catch(err => {
+        console.error("connect error:", err.message);
+      });
+  }, []);
+
+
 
   return (
     <div className="MyBuyInfo-cont">
@@ -17,15 +79,26 @@ export default function MyBuyInfo() {
         <div className="MBInfo-tab">History</div>
       </div>
       <div className="MBInfo-content-box">
-        {fakeHistory &&
-          fakeHistory.length > 0 &&
-          fakeHistory.map((history) => (
+        <div className="MBInfo-history">
+          <p>Date</p>
+          <p>Store</p>
+          <p>Point Use</p>
+          <p>Total Point</p>
+        </div>
+        {state.usage &&
+          state.usage.length > 0 &&
+          state.usage.map((history) => (
+            <>
+            {history.spend_point && 
             <div className="MBInfo-history" key={history.id}>
               <p>{history.date}</p>
-              <p>{history.brandName}</p>
-              <p>-{history.deductedPoints} pt</p>
-              <p>{history.remainingPoints} pt</p>
+              <p>{history.product_store}</p>
+              {history.spend_point && <p>-{history.spend_point} pt</p>}
+              {history.earned_point && <p>{history.earned_point} pt</p>}
+              <p>{history.remaining_point} pt</p>
             </div>
+            }
+            </>
           ))}
       </div>
 
@@ -55,3 +128,4 @@ export default function MyBuyInfo() {
     </div>
   );
 }
+
