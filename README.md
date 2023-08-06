@@ -53,7 +53,7 @@ https://www.figma.com/file/ZMbEnoDTY79aAH94zVrxOp/GNEC-Hackathon?type=design&nod
 - MyBuy
 !["MyBuy"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO05_MyBuy.png)
 - Setting
-!["Setting"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO08_Setting.png)
+!["Setting"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO06_Setting.png)
 
 
 ## Members 
