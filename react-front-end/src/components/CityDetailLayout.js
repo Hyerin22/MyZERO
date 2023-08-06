@@ -47,7 +47,8 @@ export default function CityDetailLayout() {
       .get(`/api/points/${state.user.id}/month?months=${currentMonth}`)
       .then((res) => {
         
-        const this_month = res.data[3].month_points;
+        const userPoint = res.data;
+        const this_month = userPoint.slice(-1)[0].month_points;
 
         setState((prev) => ({
           ...prev,

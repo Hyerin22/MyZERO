@@ -19,7 +19,6 @@ export default function Sidebar() {
     user: { id: 1 },
     this_month: {},
   });
-
   //get user info
   useEffect(() => {
     axios.get(`/api/users/${state.user.id}`)
@@ -40,9 +39,9 @@ export default function Sidebar() {
     axios
       .get(`/api/points/${state.user.id}/month?months=${currentMonth}`)
       .then((res) => {
-
+        
         const userPoint = res.data;
-        const this_month = userPoint.find(item => item.month === currentMonth)?.month_points;
+        const this_month = userPoint.slice(-1)[0].month_points;
 
         setState((prev) => ({
           ...prev,
