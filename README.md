@@ -44,14 +44,19 @@ https://www.figma.com/file/ZMbEnoDTY79aAH94zVrxOp/GNEC-Hackathon?type=design&nod
 ## Result
 - Main page
 !["Main page"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO01_Home.png)
+
 - Community
 !["Community"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO02_Community.png)
+
 - City Detail
 !["City Detail"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO03_City.png)
+
 - Store
 !["Store"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO04_Store.png)
+
 - MyBuy
 !["MyBuy"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO05_MyBuy.png)
+
 - Setting
 !["Setting"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO06_Setting.png)
 
@@ -60,7 +65,7 @@ https://www.figma.com/file/ZMbEnoDTY79aAH94zVrxOp/GNEC-Hackathon?type=design&nod
 ### Taehee Kim 
 #### Full Stack Developer  
 k.tehi21@gmail.com     
-https://www.linkedin.com/in/taehee-kim-van0216/ 
+https://www.linkedin.com/in/taehee-kim-van0216/           
 https://github.com/ktehi21 
 - Backend
 - Frontend API
