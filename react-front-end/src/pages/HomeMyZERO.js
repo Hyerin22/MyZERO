@@ -1,18 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import { getMonthName } from '../provider/pointsUtils';
-
-
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Bar } from "react-chartjs-2";
+// Convert numeric month to English name function helper
+import { getMonthName } from '../helper/pointsUtils';
 
 // styles
 import "../styles/HomeMyZERO.scss";
@@ -25,6 +15,17 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
 import DisplayPointTxt from "../components/DisplayPointTxt";
 
+
+// Chart.js
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 export const options = {
@@ -32,7 +33,6 @@ export const options = {
 };
 
 export default function HomeMyZERO() {
-
 
   const [state, setState] = useState({
     id: 1,
@@ -53,7 +53,6 @@ export default function HomeMyZERO() {
       // Handle cases when current month is less than 4
       recentMonths.push((currentMonth - i + 12) % 12);
     }
-    // console.log("recentMonths:", recentMonths);
 
     setSelectedMonths(recentMonths);
   }, [currentMonth]);
@@ -63,16 +62,17 @@ export default function HomeMyZERO() {
     axios
       .get(`/api/points/${state.id}/month?months=${selectedMonths.join(",")}`)
       .then((res) => {
-        // Convert numeric month to English name
+        
         const formattedData = res.data.map((item) => ({
           month: getMonthName(item.month),
           month_points: item.month_points,
         }));
-        // console.log("getMonthName", formattedData);
+
         const three_month = formattedData[0];
         const two_month = formattedData[1];
         const one_month = formattedData[2];
         const this_month = formattedData[3];
+        console.log("getMonthName", formattedData);
 
         setState((prev) => ({
           ...prev,
@@ -117,8 +117,9 @@ export default function HomeMyZERO() {
     ],
   };
 
+  // loading message here
   if (loading) {
-    return <div>Loading...</div>; // You can use a loading spinner or any loading message here
+    return <div>Loading...</div>; 
   }
 
   // new point collect 

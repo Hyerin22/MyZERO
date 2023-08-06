@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams, useNavigate } from "react-router-dom";
-import { currentMonth } from '../provider/pointsUtils';
+import { currentMonth } from '../helper/pointsUtils';
 
 // styles
 import "../styles/components/CityInfo.scss";

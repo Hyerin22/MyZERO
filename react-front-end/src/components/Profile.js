@@ -1,5 +1,5 @@
 import React from "react";
-import { getCitySymbol } from '../provider/pointsUtils';
+import { getCitySymbol } from '../helper/pointsUtils';
 
 import "../styles/components/Profile.scss";
 

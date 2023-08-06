@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { plantLevel, getCitySymbol, currentMonth } from '../provider/pointsUtils';
+import { plantLevel, getCitySymbol, currentMonth } from '../helper/pointsUtils';
 
 
 //styles

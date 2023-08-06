@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { plantLevel, currentMonth } from "../provider/pointsUtils";
+import { plantLevel, currentMonth } from "../helper/pointsUtils";
 import { useNavigate } from "react-router-dom";
 
 // styles
