@@ -48,6 +48,16 @@
     p {
       margin: 0;
       line-height: 130%;
+
+      .changeLine{
+        display: block;
+        width: 10px;
+      }
+      .marginBottom{
+        display: block;
+        width: 10px;
+        margin-bottom: 10px;
+      }
     }
   }
 

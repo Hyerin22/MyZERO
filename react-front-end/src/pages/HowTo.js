@@ -85,6 +85,33 @@ export default function HowTo() {
               unlock fantastic rewards through MyZERO. Happy eco-friendly
               shopping and good luck in the city competition!
             </p>
+
+            <p>
+              <span className="marginBottom"> </span>
+              <span className="changeLine"> </span>
+              When you see the left side you can see the some cute little icon.One of these 🪹 🌱 🌿 🪴 🌳.
+              <span className="changeLine"> </span>
+
+              🪹 0 - 4 pt: "Seeds" - Just getting started, like a tiny seed waiting to grow!
+              <span className="changeLine"> </span>
+
+              🌱 5 - 20 pt: "Seedlings" - You're sprouting up like a cute little plant!
+              <span className="changeLine"> </span>
+
+              🌿 21 - 50 pt: "Stems" - You've grown taller and stronger, like a little stem!
+              <span className="changeLine"> </span>
+
+              🪴 51 - 100 pt: "Potted Plant" - You're flourishing like a beautiful plant in a pot!
+              <span className="changeLine"> </span>
+
+              🌳 101 pt: "Big Tree" - Wow, you've become a magnificent tree with lots of points!
+              <span className="changeLine"> </span>
+              <span className="marginBottom"> </span>
+
+              Keep collecting points and watch yourself grow from a little seed to a mighty tree! Happy planting! 🌱🌳🌿
+
+Once you reach the 🌳 a month, it will save. And you can check how many trees you've got collected at Home > MyZERO page below the graph.
+            </p>
           </div>
           <div className="howto-note">
             <p className="note-text">
