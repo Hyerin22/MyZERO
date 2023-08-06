@@ -110,7 +110,7 @@ export default function HowTo() {
 
               Keep collecting points and watch yourself grow from a little seed to a mighty tree! Happy planting! 🌱🌳🌿
 
-Once you reach the 🌳 a month, it will save. And you can check how many trees you've got collected at Home > MyZERO page below the graph.
+Once you reach the 🌳 a month, it will save. And you can check how many trees you've got collected at Home &#9658; MyZERO page below the graph.
             </p>
           </div>
           <div className="howto-note">
