@@ -58,20 +58,20 @@ https://www.figma.com/file/ZMbEnoDTY79aAH94zVrxOp/GNEC-Hackathon?type=design&nod
 
 ## Members 
 ### Taehee Kim 
-Full Stack Developer
-k.tehi21@gmail.com    
-https://www.linkedin.com/in/taehee-kim-van0216/
-https://github.com/ktehi21
+#### Full Stack Developer  
+k.tehi21@gmail.com     
+https://www.linkedin.com/in/taehee-kim-van0216/ 
+https://github.com/ktehi21 
 - Backend
 - Frontend API
 - Logo design
  
 
 ### Rina Cheon 
-Front-end Developer
-hlyni22@gmail.com    
-www.hyerincheon.ca     
-www.linkedin.com/in/rinaacheon     
+#### Front-end Developer  
+hlyni22@gmail.com     
+www.hyerincheon.ca      
+www.linkedin.com/in/rinaacheon      
 https://github.com/Hyerin22
 - Frontend 
 - App design
