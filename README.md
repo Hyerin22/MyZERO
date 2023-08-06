@@ -32,9 +32,9 @@ We are thrilled to provide a platform that empowers users to make a positive imp
 
 - React
 - Sass
-- Chart.js
 - PostgreSQL
 - Express.js
+- Chart.js
 
 ## Duration
 
@@ -44,6 +44,34 @@ July 17 ~ Aug 05
 
 Figma Link: <br />
 https://www.figma.com/file/ZMbEnoDTY79aAH94zVrxOp/GNEC-Hackathon?type=design&node-id=0%3A1&mode=design&t=C67nGPi8Ic6VGlSc-1
+
+## Members
+
+### Taehee Kim
+
+#### Full Stack Developer
+
+k.tehi21@gmail.com  
+https://www.linkedin.com/in/taehee-kim-van0216/  
+https://github.com/ktehi21
+
+##### What we did
+- Backend Development
+- Logo design
+
+### Rina Cheon
+
+#### Frontend Developer
+
+hlyni22@gmail.com  
+www.hyerincheon.ca  
+www.linkedin.com/in/rinaacheon  
+https://github.com/Hyerin22
+
+##### What we did
+- Frontend Development
+- UX/UI Design
+
 
 ## Result
 
@@ -65,30 +93,6 @@ https://www.figma.com/file/ZMbEnoDTY79aAH94zVrxOp/GNEC-Hackathon?type=design&nod
 - Setting
   !["Setting"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO06_Setting.png)
 
-## Members
-
-### Taehee Kim
-
-#### Full Stack Developer
-
-k.tehi21@gmail.com  
-https://www.linkedin.com/in/taehee-kim-van0216/  
-https://github.com/ktehi21
-
-- Backend Development
-- Logo design
-
-### Rina Cheon
-
-#### Frontend Developer
-
-hlyni22@gmail.com  
-www.hyerincheon.ca  
-www.linkedin.com/in/rinaacheon  
-https://github.com/Hyerin22
-
-- Frontend Development
-- UX/UI Design
 
 ## **Getting Started**
 
