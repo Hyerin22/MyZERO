@@ -93,7 +93,7 @@ export default function SettingTab() {
       <div className="input name">
         <label>Name</label>
         <br />
-        <input type="text" defaultValue={state.user.first_name} />
+        <input className="firstName" type="text" defaultValue={state.user.first_name} />
         <input type="text" defaultValue={state.user.last_name} />
         <br />
       </div>
