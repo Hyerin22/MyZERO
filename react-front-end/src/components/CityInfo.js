@@ -88,8 +88,6 @@ export default function CityInfo() {
       });
   }, []);
 
-  // console.log("CityInfo: data?", state);
-
   // for D-day
   const [countdown, setCountdown] = useState(0);
 

@@ -62,7 +62,7 @@ export default function HomeMyZERO() {
     axios
       .get(`/api/points/${state.id}/month?months=${selectedMonths.join(",")}`)
       .then((res) => {
-        
+
         const formattedData = res.data.map((item) => ({
           month: getMonthName(item.month),
           month_points: item.month_points,
@@ -72,7 +72,6 @@ export default function HomeMyZERO() {
         const two_month = formattedData[1];
         const one_month = formattedData[2];
         const this_month = formattedData[3];
-        console.log("getMonthName", formattedData);
 
         setState((prev) => ({
           ...prev,
