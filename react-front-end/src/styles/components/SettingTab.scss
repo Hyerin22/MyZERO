@@ -7,7 +7,7 @@
   justify-content: center;
 
   input {
-    width: 250px;
+    width: 300px;
     height: 40px;
     border-radius: 10px;
     border: 2px solid rgba(0, 0, 0, 0.1);
@@ -17,7 +17,7 @@
   }
 
   select {
-    width: 275px;
+    width: 320px;
     height: 40px;
     border-radius: 10px;
     border: 2px solid rgba(0, 0, 0, 0.1);
@@ -29,12 +29,23 @@
   .input {
     margin-bottom: 15px;
 
+    
+
     .pw-pw {
       font-size: 30px;
     }
 
     .pw-text {
       font-size: 20px;
+    }
+  }
+
+  .name {
+    input{
+      width: 130px;
+    }
+    .firstName{
+      margin-right: 15px;
     }
   }
 

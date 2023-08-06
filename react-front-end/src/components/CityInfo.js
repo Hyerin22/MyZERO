@@ -18,7 +18,7 @@ const getUserPoints = async (user, currentMonth) => {
   try {
     const pointRes = await axios.get(`/api/points/${user.id}/month?months=${currentMonth}`);
     const userPoint = pointRes.data;
-    const this_month = userPoint.find(item => item.month === currentMonth)?.month_points;
+    const this_month = userPoint.slice(-1)[0].month_points;
 
     return { ...user, this_month };
   } catch (error) {
@@ -45,10 +45,10 @@ export default function CityInfo() {
           axios.get(`/api/city-user/${id}`),
           axios.get(`/api/users`)
         ]);
-        
+
         const cityUserdata = cityUserRes.data;
         const usersData = userRes.data;
-
+        
         const matchedUsers = usersData.filter(user => {
           return cityUserdata.some(cityUser => cityUser.user_id === user.id);
         });

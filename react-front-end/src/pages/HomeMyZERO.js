@@ -121,6 +121,26 @@ export default function HomeMyZERO() {
     return <div>Loading...</div>; // You can use a loading spinner or any loading message here
   }
 
+  // new point collect 
+  const handleCollectMyZero = async () => {
+    try {
+      const response = await axios.post('/api/points', {
+        user_id: state.id, 
+        city_id: 1, 
+        point: 20,
+      });
+  
+      alert('Thank you for your help to the world!\nYou\'ve got 20 point collected!');
+      window.location.reload(); 
+
+
+    } catch (error) {
+      console.error('Error collecting MyZero:', error.message);
+      alert('Sorry something wrong. Try again: ' + error.message);
+    }
+  };
+  
+
   return (
     <div className="myZero-cont">
       <div className="myZero-top">
@@ -131,6 +151,7 @@ export default function HomeMyZERO() {
           bgColor="linear-gradient(180deg, #fddb70 0%, #fead5e 100%)"
           font="DIN Alternate, sans-serif"
           radius="18px"
+          onClick={handleCollectMyZero}
         />
         <DisplayPointTxt
           text="This month you collected"
