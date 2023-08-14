@@ -29,8 +29,6 @@
   .input {
     margin-bottom: 15px;
 
-    
-
     .pw-pw {
       font-size: 30px;
     }
@@ -41,10 +39,10 @@
   }
 
   .name {
-    input{
+    input {
       width: 130px;
     }
-    .firstName{
+    .firstName {
       margin-right: 15px;
     }
   }
@@ -79,6 +77,19 @@
     select {
       width: 210px;
       font-size: 15px;
+    }
+    .name {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+
+      input {
+        width: auto;
+      }
+
+      .firstName {
+        margin-right: 0px;
+      }
     }
     .input {
       .pw-pw {
