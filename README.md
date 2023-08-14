@@ -1,6 +1,6 @@
 # MyZERO
 
-GNEC Hackathon project by Taehee and Rina
+GNEC (Global NGO Executive Committee) Hackathon project by Taehee and Rina
 <br />
 Theme: United Nations Sustainable Development Goals (UN SDGs)
 
@@ -71,7 +71,9 @@ https://github.com/Hyerin22
 ##### What we did
 - Frontend Development
 - UX/UI Design
-
+<br />
+<br />
+<br />
 
 ## Result
 
@@ -92,6 +94,23 @@ https://github.com/Hyerin22
 
 - Setting
   !["Setting"](https://raw.githubusercontent.com/ktehi21/MyZERO/main/react-front-end/assets/MyZERO06_Setting.png)
+<br />
+<br />
+<br />
+
+
+## Responsive
+<div style="display: grid; grid-template-column: repeat(3, 1fr)">
+  <img src="/react-front-end/assets/MyZERO01_Home_mob.png" alt="Main" style= "width: 250px" />
+  <img src="/react-front-end/assets/MyZERO02_Community_mob.png" alt="Main" style= "width: 250px" />
+  <img src="/react-front-end/assets/MyZERO03_City_mob.png" alt="Main" style= "width: 250px" />
+  <img src="/react-front-end/assets/MyZERO04_Store_mob.png" alt="Main" style= "width: 250px" />
+  <img src="/react-front-end/assets/MyZERO05_MyBuy_mob.png" alt="Main" style= "width: 250px" />
+  <img src="/react-front-end/assets/MyZERO06_Setting_mob.png" alt="Main" style= "width: 250px" />
+</div>
+<br />
+<br />
+<br />
 
 
 ## **Getting Started**
